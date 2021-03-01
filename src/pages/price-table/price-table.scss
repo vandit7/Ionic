@@ -1,0 +1,128 @@
+page-price-table {
+  .mainDivPrice {
+    background: #fff;
+    width: 100%;
+    box-shadow: 0px 1px 2px 1px rgba(232, 226, 217, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+  }
+  .p30 {
+    padding: 15px 30px 0px 30px;
+  }
+  .planText {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: #649941;
+    font-family: "Lato", sans-serif;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  .imgPlan {
+    height: 50px;
+    width: 50px;
+    margin-right: 15px;
+  }
+  .monthText {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 900;
+    color: rgba(68, 68, 68, 0.5);
+    letter-spacing: 0.5px;
+  }
+  .priceText {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(237, 125, 0, 0.8);
+  }
+  .listplanText {
+    font-size: 16px;
+    color: #7b7b7b;
+    letter-spacing: 0.5px;
+    margin: 0px;
+    text-align: left;
+    margin-right: 10px;
+  }
+  .viewplanText {
+    font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #7b7b7b;
+    letter-spacing: 0.5px;
+    margin: 0px;
+    text-align: center;
+  }
+  .stepDiv {
+    border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .loginBtn {
+    background: #649941;
+    margin-top: 0px;
+    color: #fff;
+    height: 45px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    font-family: "Lato", sans-serif;
+    margin-top: 10px;
+  }
+  .wh20 {
+    width: 20px;
+    height: 20px;
+  }
+
+  .currentPlanTxt {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #649941;
+  }
+  .mostPopDiv {
+    position: absolute;
+    top: -13px;
+    font-size: 13px;
+    background: rgba(100, 153, 65, 0.8);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+    right: 12px;
+    font-family: "Lato", sans-serif;
+  }
+  .notFoundText {
+    text-align: center;
+    font-size: 18px;
+    color: #ed7d00;
+    font-family: "Lato", sans-serif;
+  }
+  .wh25{
+    width: 25px;
+    height: 25px;
+  }
+  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{
+        bottom: 14px !important;
+  }
+  .swiper-pagination-bullet{
+    width: 13px !important;
+    height: 13px !important;
+  }
+  .d-flex {
+    display: flex;
+  }
+  .dis_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,359 @@
+<ion-content class="">
+  <div class="h360 posRel tc mDiv">
+    <div class="w100p disFlex plr15t25" style="position: absolute;z-index: 999;">
+      <div class="w10p tl">
+        <img src="../../assets/imgs/leftarrow.png" class="h25" (click)="gotoMain()">
+      </div>
+      <div class="w70p">
+        <p class="nameTxt fLato">{{fullname}}</p>
+      </div>
+    </div>
+    <ion-slides slidesPerView="1" class="h360" pager="true">
+      <ion-slide class=""  *ngFor="let item of userListImg; let idx = index;">
+        <div class=" posRel tc h360">
+          <img src="{{item.img}}" class="AllImgs">
+          <div class="imgLe">
+          </div>
+        </div> 
+      </ion-slide>
+    </ion-slides>
+    <div class="imgSubDiv" style="position: absolute;bottom: 38px; width: 100%;z-index: 99999999;">
+      <div class="w100p disFlex LinkDiv">
+        <div class="w50p tc" *ngIf="!test(Selectregister_id)" (click)="linkPro(Selectregister_id)">
+          <img src="../../assets/img/like.svg" class="divImg1 fivePhasesFadeIn">
+          <p class="textDiv fLato colorfff fw300">Like</p>
+        </div>
+        <div class="w50p tc" *ngIf="test(Selectregister_id)" (click)="unLinkPro(Selectregister_id)">
+          <img src="../../assets/img/like_done.svg" class="divImg1 fivePhasesFadeIn">
+          <p class="textDiv fLato colorfff fw300">Unlike</p>
+        </div>
+  
+        <div class="w50p tc" *ngIf="RequestStatus == '2'" (click)="connectNow(Selectregister_id)">
+          <img src="../../assets/img/connect.svg" class="divImg1">
+          <p class="textDiv fLato colorfff fw300">Connect</p> 
+        </div>
+        <div class="w50p tc" *ngIf="RequestStatus == '0'" (click)="UpdateStatus(RequestID,'3')">
+          <img src="../../assets/img/close.svg" class="divImg1">
+          <p class="textDiv fLato color649 fw300">Reject</p> 
+        </div>
+        <div class="w50p tc" *ngIf="RequestStatus == '1'" (click)="joinChat(Selectregister_id)">
+          <img src="../../assets/img/chat.svg" class="divImg1">
+          <p class="textDiv fLato color649 fw300">Chat Now</p> 
+        </div>
+        <div class="w50p tc" *ngIf="RequestStatus == '3'" (click)="ShowPopupCancelReq(RequestID,'3')">
+          <img src="../../assets/img/close.svg" class="divImg1">
+          <p class="textDiv fLato colorED7 fw300">Cancel</p>
+        </div>
+        <div class="w50p tc" *ngIf="RequestStatus == '4'" (click)="UpdateStatus(RequestID,'1')">
+          <img src="../../assets/img/connect.svg" class="divImg1">
+          <p class="textDiv fLato colorfff fw300">Accept</p>
+        </div>
+        <div class="w50p tc" *ngIf="RequestStatus == '4'" (click)="UpdateStatus(RequestID,'2')">
+          <img src="../../assets/img/close.svg" class="divImg1">
+          <p class="textDiv fLato colorED7 fw300">Reject</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <div class="h360 posRel tc mDiv" >
+        <img src="{{profile}}" class="AllImgs" onError="src = '../../assets/imgs/defaultImg.png'"> 
+        <div class="imgLe">
+          <div class="w100p disFlex plr15" >
+              <div class="w50p tl">
+                <img src="../../assets/imgs/leftarrow.png" class="h25" (click)="gotoMain()">
+              </div>
+              <div class="w50p tr" style="opacity: 0;" >
+                  <div class="menuIcons">
+                  <img src="../../assets/imgs/menu.png" class="divImgMenu">
+                  </div>
+              </div>
+          </div>
+          <div class="w100p disFlex plr15t10">
+            <div class="w50p tl">
+            </div>
+            <div class="w50p tr" style="opacity: 0;">
+              <div class="cameraIcon fr">
+                <span class="textDiv fLato colorfff fw600" style="font-size: 13px;">3</span>
+              <img src="../../assets/imgs/camera.png" class="divImgCamera">
+              </div> 
+            </div>
+        </div>
+            <div class="imgSubDiv" style="position: absolute;bottom: 0; width: 100%;">
+                <div class="w100p disFlex" >
+                  <div class="w70p">
+                    <p class="nameTxt fLato">{{fullname}}</p>
+                  </div>
+                  <div class="w30p div1" style="opacity: 0;">
+                    <img src="../../assets/imgs/App.png" class="divImgHeart"> 
+                    <span class="textDivPre fLato color649">85 %</span></div>
+                </div>
+                <div class="w100p disFlex">
+                    <p class="nameTxt1 fLato">{{age}} years, {{height}}" - {{education_field}}, {{city}}, {{state}}, {{country_name}}</p>
+                </div>
+                <div class="bob"></div>
+                <div class="w100p disFlex LinkDiv">
+                  <div class="w50p tl" style="opacity: 0;">
+                      <img src="../../assets/imgs/like.png" class="divImg"> 
+                      <span class="textDiv fLato colorfff fw600">Like This Profile ?</span>
+                  </div>
+                  <div class="w50p tr" *ngIf="RequestStatus == '2'" (click)="connectNow(Selectregister_id)">
+                      <span class="textDiv fLato color649 fw600">Connect Now</span>
+                      <img src="../../assets/imgs/next.png" class="divImg">
+                    </div>
+                    <div class="w50p tr" *ngIf="RequestStatus == '0'">
+                      <div class="w100p disFlex">
+                        <div class="w50p">
+                        </div>
+                        <div class="w50p div2" style="padding-top: 8px;" (click)="UpdateStatus(RequestID,'3')">
+                          <img src="../../assets/imgs/ic_reject.png" class="h25">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w50p tr" *ngIf="RequestStatus == '1'"  (click)="joinChat(Selectregister_id)">
+                      <div class="w100p" style="padding-top: 4px;display: block;">
+                        <img src="../../assets/imgs/ic_comment.png" class="h30" >
+                      </div>
+                    </div>
+                    <div class="w50p tr" *ngIf="RequestStatus == '3'" (click)="ShowPopupCancelReq(RequestID,'3')">
+                        <span class="textDiv fLato colorED7 fw600">Cancel</span>
+                        <img src="../../assets/imgs/Group.png" class="divImg">
+                    </div>
+                    <div class="w50p tr" *ngIf="RequestStatus == '4'">
+                      <div class="w100p disFlex"  style="padding-top: 6px;">
+                          <div class="w60p">
+                              
+                            </div>
+                        <div class="w20p">
+                          <img src="../../assets/imgs/ic_accept.png" class="h25" (click)="UpdateStatus(RequestID,'1')">
+                        </div>
+                        <div class="w20p div2">
+                          <img src="../../assets/imgs/ic_reject.png" class="h25" (click)="UpdateStatus(RequestID,'2')">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+      </div> -->
+
+
+
+  <div class="p12">
+    <div class="mt10">
+      <p class="f16 fwBold color000 ls05 fLato">About {{fullname}}</p>
+      <p class="proText fw500  ls05 fLato">{{register_id}} | <span>Profile created by {{profile_for}}</span></p>
+    </div>
+    <div>
+      <div class="boxDiv bgColorAll">
+        <p>{{about}}</p>
+      </div>
+      <div class="mt15">
+        <p class="f16 fwBold color000 ls05 fLato">Contact Details</p>
+      </div>
+      <div class="boxDiv bgColorAll">
+        <div class="w100p disFlex">
+          <div class="w10p">
+            <img src="../../assets/imgs/ic_call.png" class="divImg">
+          </div>
+          <div class="w70p"> <span class="boxTxt fLato">{{mobile_no}}</span></div>
+          <div class="w20p showBtn" *ngIf="is_expire == 0" (click)="ShowPopupUpgrade()"> <span
+              class="boxTxt fLato">Show</span></div>
+          <div class="w20p showBtn" *ngIf="is_expire == 1" (click)="ShowPopupMobile(register_id)"> <span
+              class="boxTxt fLato">Show</span></div>
+          <div class="w20p showBtn" *ngIf="is_expire == 2" (click)="ShowPopupExpired()"> <span
+              class="boxTxt fLato">Show</span></div>
+        </div>
+      </div>
+      <!-- <div class="boxDiv bgColorAll">
+              <div class="w100p disFlex ">
+                <div class="w10p">
+                  <img src="../../assets/imgs/ic_mail.png" class="divImg">
+                </div>
+                <div class="w90p"> <span class="boxTxt fLato">{{email_id}}</span></div>
+              </div>
+            </div> -->
+
+      <div class="mt15">
+        <p class="f16 fwBold color000 ls05 fLato">Life Style & Appearance</p>
+      </div>
+      <div class="">
+        <div class="boxDiv bgColorAll">
+          <div class="w100p disFlex">
+            <div class="w10p">
+              <img src="../../assets/imgs/ic_user.png" class="divImg">
+            </div>
+            <div class="w90p"> <span class="boxTxt fLato">{{age}} years, {{height}}" , {{weight}} kg</span></div>
+          </div>
+        </div>
+        <div class="boxDiv bgColorAll">
+          <div class="w100p disFlex">
+            <div class="w10p">
+              <img src="../../assets/imgs/ic_ring.png" class="divImg">
+            </div>
+            <div class="w90p"> <span class="boxTxt fLato">{{marital_status}}</span></div>
+          </div>
+        </div>
+        <div class="boxDiv bgColorAll">
+          <div class="w100p disFlex">
+            <div class="w10p">
+              <img src="../../assets/imgs/ic_map.png" class="divImg">
+            </div>
+            <div class="w90p"> <span class="boxTxt fLato"> {{city}}, {{state}}, {{country_name}}</span></div>
+          </div>
+        </div>
+        <div class="boxDiv bgColorAll">
+          <div class="w100p disFlex ">
+            <div class="w10p">
+              <img src="../../assets/imgs/ic_wineglass.png" class="divImg">
+            </div>
+            <div class="w90p"> <span class="boxTxt fLato">{{smoke}}, {{drink}}</span></div>
+          </div>
+        </div>
+        <div class="boxDiv bgColorAll">
+          <div class="w100p disFlex">
+            <div class="w10p">
+              <img src="../../assets/imgs/ic_body.png" class="divImg">
+            </div>
+            <div class="w90p"> <span class="boxTxt fLato">{{skin_type}}, {{body_type}}</span></div>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div class="mt15">
+              <p class="f14 fw600 colorED7 ls05 fLato">Conversation Starter</p>
+            </div>
+            <div class="">
+                <div class="boxDiv bgColorAll">
+              <div class="w100p disFlex">
+                <div class="w10p">
+                  <img src="../../assets/imgs/finger.png" class="divImg">
+                </div>
+                <div class="w90p"> <span class="boxTxt fLato">You Both Are Vegetarians</span></div>
+              </div>
+            </div>
+            <div class="boxDiv bgColorAll">
+              <div class="w100p disFlex ">
+                <div class="w10p">
+                  <img src="../../assets/imgs/finger.png" class="divImg">
+                </div>
+                <div class="w90p"> <span class="boxTxt fLato">She Lives In Gujarat Too</span></div>
+              </div>
+            </div>
+            <div class="boxDiv bgColorAll">
+              <div class="w100p disFlex ">
+                <div class="w10p">
+                  <img src="../../assets/imgs/finger.png" class="divImg">
+                </div>
+                <div class="w90p"> <span class="boxTxt fLato">She is From Gujarati Community As Well</span></div>
+              </div>
+            </div>
+          </div> -->
+
+      <div class="mt15">
+        <p class="f16 fwBold color000 ls05 fLato">Education & Career</p>
+      </div>
+      <div class="">
+        <div class="boxDiv bgColorAll">
+          <div class="w100p disFlex">
+            <div class="w10p">
+              <img src="../../assets/imgs/ic_cap.png" class="divImg">
+            </div>
+            <div class="w90p"> <span class="boxTxt fLato">{{education_level}}</span></div>
+          </div>
+        </div>
+        <div class="boxDiv bgColorAll">
+          <div class="w100p disFlex ">
+            <div class="w10p">
+              <img src="../../assets/imgs/ic_beg.png" class="divImg">
+            </div>
+            <div class="w90p"> <span class="boxTxt fLato">{{organisation}}</span></div>
+          </div>
+        </div>
+        <div class="boxDiv bgColorAll">
+          <div class="w100p disFlex ">
+            <div class="w10p">
+              <img src="../../assets/imgs/ic_money.png" class="divImg">
+            </div>
+            <div class="w90p"> <span class="boxTxt fLato">{{income}}</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="expectationDiv">
+        <div class="mt20">
+          <p class="f16 fwBold color000 ls05 fLato tc">{{MainLabel}}</p>
+        </div>
+        <div class="boxDiv bgColorAllNew">
+          <div class="w100p disFlex topDiv h110">
+            <div class="w30p tc">
+              <img src="{{leftProImg}}" class="preImg" onError="src = '../../assets/imgs/defaultImg.png'">
+              <p class="boxTxt fLato">{{leftTitle}}</p>
+            </div>
+            <div class="w40p tc pt10">
+              <p class="boxTxt fLato color649 mb4 f12 fw600 bb649">{{matches_count}}</p>
+            </div>
+            <div class="w30p tc">
+              <img src="{{rightProImg}}" class="preImg" onError="src = '../../assets/imgs/defaultImg.png'">
+              <p class="boxTxt fLato">{{rightTitle}}</p>
+            </div>
+          </div>
+
+          <div class="w100p disFlex topDiv">
+            <div class="w90p">
+              <p class="boxTxt fLato color649 mb4 f12 fw600">Age</p>
+              <span class="boxTxt fLato">{{leftAge}}</span>
+            </div>
+            <div class="w10p tr pt10" *ngIf="rightAge == '0'"> <img src="../../assets/imgs/c2.png" class="divImg">
+            </div>
+            <div class="w10p tr pt10" *ngIf="rightAge == '1'"> <img src="../../assets/imgs/c1.png" class="divImg">
+            </div>
+          </div>
+          <div class="w100p disFlex topDiv">
+            <div class="w90p">
+              <p class="boxTxt fLato color649 mb4 f12 fw600">Height</p>
+              <span class="boxTxt fLato">{{leftHeight}}</span>
+            </div>
+            <div class="w10p tr pt10" *ngIf="rightHeight == '0'"> <img src="../../assets/imgs/c2.png" class="divImg">
+            </div>
+            <div class="w10p tr pt10" *ngIf="rightHeight == '1'"> <img src="../../assets/imgs/c1.png" class="divImg">
+            </div>
+          </div>
+          <div class="w100p disFlex topDiv">
+            <div class="w90p">
+              <p class="boxTxt fLato color649 mb4 f12 fw600">Marital Status</p>
+              <span class="boxTxt fLato">{{leftMarital_status}}</span>
+            </div>
+            <div class="w10p tr pt10" *ngIf="rightMarital_status == '0'"> <img src="../../assets/imgs/c2.png"
+                class="divImg"> </div>
+            <div class="w10p tr pt10" *ngIf="rightMarital_status == '1'"> <img src="../../assets/imgs/c1.png"
+                class="divImg"> </div>
+          </div>
+          <div class="w100p disFlex topDiv">
+            <div class="w90p">
+              <p class="boxTxt fLato color649 mb4 f12 fw600">Drink</p>
+              <span class="boxTxt fLato">{{leftDrink}}</span>
+            </div>
+            <div class="w10p tr pt10" *ngIf="rightDrink == '0'"> <img src="../../assets/imgs/c2.png" class="divImg">
+            </div>
+            <div class="w10p tr pt10" *ngIf="rightDrink == '1'"> <img src="../../assets/imgs/c1.png" class="divImg">
+            </div>
+          </div>
+          <div class="w100p disFlex topDiv">
+            <div class="w90p">
+              <p class="boxTxt fLato color649 mb4 f12 fw600">Smoke</p>
+              <span class="boxTxt fLato">{{leftSmoke}}</span>
+            </div>
+            <div class="w10p tr pt10" *ngIf="rightSmoke == '0'"> <img src="../../assets/imgs/c2.png" class="divImg">
+            </div>
+            <div class="w10p tr pt10" *ngIf="rightSmoke == '1'"> <img src="../../assets/imgs/c1.png" class="divImg">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

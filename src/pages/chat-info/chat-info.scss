@@ -1,0 +1,220 @@
+page-chat-info {
+  
+  .h320 {
+    height: 320px;
+  }
+  p {
+    margin: 0px;
+  }
+  .Ptext {
+    margin: 0;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-weight: 500;
+  }
+  ion-slides {
+    overflow-y: scroll;
+  }
+  .swiper-slide {
+    overflow-y: scroll;
+  }
+  .p16 {
+    padding: 16px;
+  }
+  .AllImgs {
+    height: 100%;
+    object-fit: cover;
+    text-align: center;
+    width: 100%;
+    // border-radius: 5px;
+  }
+  .imgLe {
+    position: absolute;
+    width: 100%;
+    height: 320px;
+    top: 0;
+    background-image: linear-gradient(transparent 5%, #000);
+  }
+  .mDiv {
+    box-shadow: 0px 1px 2px 2px rgba(241, 245, 249, 0.9);
+    margin-bottom: 15px;
+  }
+
+  .nameTxt {
+    margin: 0;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 15px;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    text-align: left;
+  }
+  .div1 {
+    color: #fff;
+    padding-top: 10px;
+    padding-left: 15px;
+    text-align: right;
+    padding-right: 15px;
+  }
+  .divImg {
+    height: 20px;
+    vertical-align: middle;
+  }
+  .divImgMenu {
+    height: 15px;
+    vertical-align: middle;
+  }
+  .divImgHeart {
+    height: 20px;
+    vertical-align: text-bottom;
+  }
+  .divImgCamera {
+    height: 20px;
+    vertical-align: middle;
+    font-size: 13px;
+    padding-left: 4px;
+    vertical-align: text-top;
+    height: 16px;
+    padding-right: 4px;
+  }
+  .textDiv {
+    font-size: 12px;
+    padding-left: 5px;
+    letter-spacing: 0.5px;
+  }
+  .textDivPre {
+    letter-spacing: 0.5px;
+    font-weight: bolder;
+    font-size: 13px;
+    padding-left: 0px;
+  }
+  .textDiv {
+    font-size: 12px;
+    padding-left: 5px;
+    letter-spacing: 0.5px;
+  }
+  .nameTxt1 {
+    margin: 0;
+    color: #fff;
+    line-height: 25px;
+    padding-left: 5px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding-right: 15px;
+    text-align: left;
+    padding-bottom: 5px;
+  }
+  .bob {
+    margin-left: 15px;
+    margin-right: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .LinkDiv {
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 5px;
+  }
+  .plr15 {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+  }
+  .plr15t10 {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+  }
+  .cameraIcon {
+    background: rgba(0, 0, 0, 0.7);
+    width: max-content;
+    padding: 4px;
+    border-radius: 4px;
+  }
+  .menuIcons {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3px;
+    height: 25px;
+    border-radius: 3px;
+    width: 20px;
+    float: right;
+  }
+
+  .bgColor {
+    background-color: rgba(232, 226, 217, 0.5);
+  }
+  .p12 {
+    padding: 12px;
+    padding-top: 0px;
+  }
+  .proText {
+    padding-top: 3px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.9);
+  }
+  .boxDiv {
+    height: auto;
+    margin-top: 7px;
+    // background: linear-gradient(rgb(241, 245, 249) 40%, rgb(255, 255, 255)) rgb(241, 245, 249);
+    border-radius: 5px;
+    // box-shadow: 0px 1px 2px 1px rgba(232, 226, 217, 0.9);
+    padding: 10px;
+  }
+  .bgColorAll {
+    background: linear-gradient(rgb(241, 245, 249) 30%, rgb(255, 255, 255)) rgb(241, 245, 249);
+  }
+  .boxTxt {
+    font-size: 14px;
+    padding-left: 5px;
+    letter-spacing: 0.5px;
+  }
+  .topDiv {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eaeff3;
+    padding-top: 6px;
+  }
+  p {
+    margin: 0px;
+  }
+  .preImg {
+    height: 50px;
+    border-radius: 100%;
+    width: 50px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+  }
+
+  .blockText {
+    height: 40px;
+    text-align: center;
+    background: rgba(100, 153, 65, 0.4);
+    color: red;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  .msgBlockTet {
+    position: absolute;
+    top: 5%;
+    z-index: 999;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+    left: 0;
+    right: 0;
+    padding: 75px;
+    font-size: 14px;
+    
+  }
+  .copyP{
+    background: rgba(0, 0, 0, 0.6);line-height: 30px; border-radius: 15px;
+    
+  }
+}

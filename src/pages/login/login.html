@@ -1,0 +1,49 @@
+
+
+<ion-content padding hide-tabs class="bgPage" >
+<!-- <button class="Primary" (click)="openApp()">Open App </button> [ngStyle]="{'bottom':hei}"-->
+<div>
+<div  class="heightCss" style="height: 320px;">
+<div class="tc mt10"><img src="../../assets/imgs/ic_logo.png" class="h50"></div>
+<div class="tc" style="margin-left: 100px;color:#ec7d00"><span>Hindu,Sikh,Muslim</span></div>
+<div class="tc mt15"><img src="../../assets/imgs/ic_image.png" class=""></div>
+<div class="tc mt15"><p class="f20 fw500 colorED7">Sign In</p></div>
+<div>
+    <p class="tc color7B7B ls04">
+        A pioneer in the matchmaking and matrimony industry, we’ve emerged as the most trusted and secure service for finding a life-partner
+    </p>
+</div>
+</div>
+<div class=" ml15 mr15" >
+<div class="">
+    <ion-list>
+        <ion-item class="" style="margin-bottom: 15px;">
+          <!-- <ion-input type="text" value=""  placeholder="Enter Mobile No"  maxlength="10"  [(ngModel)]="mobile" clearOnEdit="false"></ion-input> -->
+          <ion-input type="tel"  placeholder="Enter Mobile No" [(ngModel)]="emailId"  maxlength="10" clearOnEdit="false"></ion-input>
+        </ion-item>
+      
+        <!-- <ion-item>
+          <ion-input type="password" placeholder="Password" [(ngModel)]="password" clearOnEdit="false"></ion-input>
+        </ion-item> -->
+      <!-- <div class="tr mt10" ><span class="forgot" (tap)="gotoForgot()">Forgot Password ?</span></div> -->
+      </ion-list>
+      <button ion-button full class="loginBtn fExo" type="submit"  [disabled]="disableButton" (click)="appLogin()">Sign in</button>
+      <!-- <button ion-button full class="loginBtn fExo" type="submit"  (click)="googleLogin()">Sign in</button> -->
+      <p class="frgtPwd1 fExo tc" style="margin-bottom: 5px; margin-top: 15px;">I don't have an account | <b class="register_b colorED7" (tap)="gotoRegister()">Signup Now!</b></p>
+     <!-- <p class="ORtext fExo tc m0 colorED7">OR</p>
+      <div class="tc w100p disFlex">
+        <div class="w50p tr" style="padding-right: 8px;">
+           <div>
+             <img src="../../assets/imgs/google_icon.png" (click)="loginActionGmail()" style="width: 35px;">
+          </div>
+        </div>
+        <div class="w50p tl" style="padding-left: 8px;"> 
+            <div>
+                <img src="../../assets/imgs/facebook_icon.png" (click)="loginActionFB()" style="width: 35px;"> 
+             </div>
+        </div>
+      </div> -->
+</div>
+</div>
+</div>
+</ion-content>

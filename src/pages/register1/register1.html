@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-navbar>
+    <div class="w100p disFlex">
+      <div class="w15p tc"> <img src="../../assets/imgs/left-arrow.png" class="h30 w25" (tap)="gotoLogin()"></div>
+      <div class="w50p"> <img src="../../assets/imgs/ic_logo.png" class="h30"></div>
+      <div class="w35p tr"> <img src="../../assets/imgs/step_1.png" class="h30"></div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <div class="mt15">
+      <p class="f14 fw500 colorED7 ">SIGNUP DETAILS</p> 
+    </div>
+    <ion-list>
+      <label class="f12 fLato ls04 allfont">Account Name <span class="colorRed">*</span></label>
+      <ion-item class="mb10 mt3">
+        <ion-input type="text" placeholder="Enter Account Name"  [(ngModel)]="accountName" clearOnEdit="false"></ion-input>
+      </ion-item>
+      <label class="f12 fLato ls04 allfont">Profile For <span class="colorRed">*</span></label>
+
+
+      <div class="mb10 mt3">
+        <ng-select [items]="profileFor" bindLabel="name" bindValue="name" placeholder="Choose"
+          [(ngModel)]="selectedProfileFor" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+          (change)="onChange($event)" [dropdownPosition]="bottom"> 
+
+          <ng-template ng-label-tmp let-item="item">
+            <div style="display: flex;padding-top: 2px;" >
+              {{item.name}}
+            </div>
+          </ng-template>
+          <ng-template ng-option-tmp let-item="item" let-index="index"> 
+            <div style="display: flex;">
+              <b>{{item.name}}</b>
+            </div>
+          </ng-template>
+        </ng-select>
+      </div>
+
+      <div class="disFlex w100p">
+        <div class="w30p mr5">
+          <label class="f12 fLato allfont">Your Mobile No. <span class="colorRed">*</span></label>
+          <ion-item class="mb10 mt3">
+            <ion-input type="text"  placeholder="+91" class="fLato"  [(ngModel)]="mocode"  disabled="true" ></ion-input>
+          </ion-item>
+        </div>
+        <div class="w70p ml5">
+          <label class="f12 fLato" style="opacity: 0">Mobile No <span class="colorRed">*</span></label>
+          <ion-item class="mb10 mt3">
+            <ion-input type="tel"  placeholder="Mobile No" class="fLato"  [(ngModel)]="mobile"  maxlength="10" clearOnEdit="false"></ion-input>
+          </ion-item>
+        </div>
+      </div>
+      <label class="f12 fLato ls04 allfont">Username <span class="colorRed">*</span></label>
+      <ion-item class="mb10 mt3">
+        <ion-input type="text" placeholder="Enter Username"  [(ngModel)]="userName" clearOnEdit="false"></ion-input>
+      </ion-item>
+      <label class="f12 fLato ls04 allfont">Email <span class="colorRed">*</span></label>
+      <ion-item class="mb10 mt3">
+        <ion-input type="text" placeholder="Enter Email Address"  [(ngModel)]="emailAddress" clearOnEdit="false"></ion-input>
+      </ion-item>
+      <!-- <label class="f12 fLato ls04 allfont">Password <span class="colorRed">*</span></label>
+      <ion-item class="mb10 mt3">
+        <ion-input type="password" placeholder="Enter Password"  [(ngModel)]="password" clearOnEdit="false"></ion-input>
+      </ion-item>
+      <label class="f12 fLato ls04 allfont">Confirm Password <span class="colorRed">*</span></label>
+      <ion-item class="mb10 mt3">
+        <ion-input type="password" placeholder="Enter Confirm Password"  [(ngModel)]="confirmpassword" clearOnEdit="false"></ion-input>
+      </ion-item> -->
+    </ion-list>
+  </div>
+  <div>
+    <div class="mt15">
+      <p class="f14 fw500 colorED7 ">PROFILE DETAILS</p>
+    </div>
+    <ion-list>
+      <div class="disFlex w100p">
+        <div class="w50p mr5">
+          <label class="f12 fLato ls04 allfont">First Name<span class="colorRed">*</span></label>
+          <ion-item class="mb10 mt3">
+            <ion-input type="text" value="" placeholder="Enter First Name" class="fLato" [(ngModel)]="fullname" (keypress)="keyPress($event)" clearOnEdit="false"></ion-input>
+          </ion-item>
+        </div>
+        <div class="w50p ml5">
+          <label class="f12 fLato ls04 allfont">Last Name <span class="colorRed">*</span></label>
+          <ion-item class="mb10 mt3">
+            <ion-input type="text" value="" placeholder="Enter Last Name" class="fLato" [(ngModel)]="lastname" (keypress)="keyPress($event)" clearOnEdit="false"></ion-input>
+          </ion-item>
+        </div>
+      </div>
+      <div class="disFlex w100p">
+        <div class="w50p mr5">
+          <label class="f12 fLato ls04 allfont">Gender <span class="colorRed">*</span></label>
+          <div class="mb10 mt3">
+            <ng-select [items]="gender" bindLabel="name" bindValue="name" placeholder="Choose"
+              [(ngModel)]="selectedGender" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+              (change)="onChangeGender($event)" [dropdownPosition]="bottom">
+
+              <ng-template ng-label-tmp let-item="item">
+                <div style="display: flex;">
+                  {{item.name}}
+                </div>
+              </ng-template>
+              <ng-template ng-option-tmp let-item="item" let-index="index">
+                <div style="display: flex; padding-top: 2px;">
+                  <b>{{item.name}}</b>
+                </div>
+              </ng-template>
+            </ng-select>
+          </div>
+        
+        </div>
+        <div class="w50p ml5">
+          <label class="f12 fLato ls04 allfont">Date Of Birth <span class="colorRed">*</span></label>
+          <ion-item class="mb10 mt3">
+            <!-- <ion-label>Date Of Birth</ion-label> -->
+            <ion-datetime displayFormat="DD-MM-YYYY" placeholder="Date Of Birth" [max]="endMax" [(ngModel)]="dob"></ion-datetime>
+          </ion-item>
+        </div>
+      </div>
+    </ion-list>
+    <button ion-button full class="loginBtn fExo" type="submit" [disabled]="disableButton"
+      (click)="stepReg1()">Continue</button>
+    <p class="frgtPwd1 fExo tc mb10">I already have an account | <b class="register_b colorED7"
+        (tap)="gotoLogin()">Signin Now!</b></p>  
+  </div>
+</ion-content>

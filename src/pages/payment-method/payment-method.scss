@@ -1,0 +1,159 @@
+page-payment-method {
+  .w100 {
+    width: 100px;
+  }
+  .pt5 {
+    padding-top: 5px;
+  }
+  .menuText {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-family: "Lato", sans-serif;
+  }
+  .tabBg {
+    background-color: rgba(100, 153, 65, 0.1);
+  }
+  .activeTab {
+    border-bottom: 2px solid #649941;
+    color: #649941;
+  }
+  .disTab {
+    color: rgba(100, 153, 65, 0.4);
+  }
+  .p12 {
+    padding: 12px;
+  }
+  .bgColor {
+    background-color: rgba(232, 226, 217, 0.5);
+  }
+  .boxDiv {
+    height: auto;
+    // margin-top: 7px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 1px rgba(232, 226, 217, 0.3);
+    padding: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  .msgImg {
+    border-radius: 100%;
+  }
+  .nameTxt {
+    margin: 0;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 15px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .textDiv {
+    font-size: 13px;
+    padding-left: 5px;
+    letter-spacing: 0.5px;
+    margin: 0;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    color: #ed7d00;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .nameTxt1 {
+    margin: 0;
+    color: #b6bbbf;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 15px;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .fullText {
+    margin: 0;
+    color: #b6bbbf;
+    height: auto;
+    line-height: 15px;
+    padding-left: 8px;
+    padding-right: 5px;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .notFoundText {
+    text-align: center;
+    font-size: 18px;
+    color: #ed7d00;
+    font-family: "Lato", sans-serif;
+  }
+  .sendBtn {
+    text-align: center;
+    background: #649941;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Lato", sans-serif;
+  }
+  .cancelBtn {
+    text-align: center;
+    background: #ed7d00;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Lato", sans-serif;
+  }
+  .ProfileImg {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+  }
+  .tryBtn {
+    background: #649941;
+    color: #fff;
+    height: 40px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    width: 65%;
+    margin: auto;
+  }
+
+  .textDet {
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ed7d00;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    background-color: rgba(100, 153, 65, 0.1);
+  }
+  .loginBtn {
+    background: #649941;
+    margin-top: 0px;
+    color: #fff;
+    height: 45px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    font-family: "Lato", sans-serif;
+  }
+}

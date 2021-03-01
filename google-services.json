@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "386715253449",
+    "firebase_url": "https://jatshadi-91ee8.firebaseio.com",
+    "project_id": "jatshadi-91ee8",
+    "storage_bucket": "jatshadi-91ee8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386715253449:android:f1dfc0f24e80e9a9a76b18",
+        "android_client_info": {
+          "package_name": "com.jat.shadi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "386715253449-rbad0lcq36mf36dthhvu09kg1lg2lg3p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUW3ISZ0pSIlqBp0aCibtMOTNLGwBLI7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "386715253449-rbad0lcq36mf36dthhvu09kg1lg2lg3p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

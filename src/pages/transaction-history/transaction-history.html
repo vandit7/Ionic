@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <div class="w100p disFlex">
+      <div class="w50p pl15"> <img src="../../assets/imgs/ic_logo.png" class="h30"></div>
+      <div class="w50p tr skipTxt" (click)="gobackProfile()"> Back</div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bgColor">
+  <div class="p5" *ngIf="!NotFound">
+    <div class="boxDiv" *ngFor="let item of tranHisList; let idx = index;">
+      <div class="w100p disFlex" (click)="goToDetailsPage(item)" > 
+        <div class="w20p tc  pt5">
+          <img src="{{item.img}}" class="imgPlan" onError="src = '../../assets/imgs/defaultImg.png'">
+        </div>
+        <div class="w55p pl5">
+          <div class="w100p disFlex">
+            <div>
+              <div><p class="tranIdleb">Plan Name</p></div>
+              <p class="planText">{{item.PlanName}}</p>
+              <div class="mt7"><p class="tranIdleb">Transaction ID</p></div>
+              <div><p class="tranId">{{item.TransactionID}}</p></div>
+              <div class="mt7"><p class="tranIdleb">Date</p></div>
+              <div><p class="tranId">{{item.Date}}</p></div>
+              <div class="mt7"><p class="tranIdleb">Expire Date</p></div>
+              <div><p class="tranId">{{item.ExpireDate}}</p></div>
+              <div class="mt7"><p class="tranIdleb">Status</p></div>
+              <div *ngIf="item.status == '1'"><p class="tranId" style="color: green;">{{item.StatusText}}</p></div>
+              <div *ngIf="item.status == '2'"><p class="tranId" style="color: red;">{{item.StatusText}}</p></div>
+              <div *ngIf="item.status != '1' && item.status != '2'"><p class="tranId" style="color: coral;">{{item.StatusText}}</p></div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="w25p tr">
+              <p class="priceText"><span>₹</span> <span>{{item.Amount}}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style=" text-align: center;font-size: 24px;color: #649941;" *ngIf="NotFound">No Record Found</p>
+</ion-content>

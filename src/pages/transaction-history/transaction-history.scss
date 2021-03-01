@@ -1,0 +1,51 @@
+page-transaction-history {
+    .mt7{margin-top: 7px;}
+    .bgColor {
+        background-color: rgba(232, 226, 217, 0.5);
+      }
+    .boxDiv {
+        height: auto;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 1px 2px 1px rgba(232, 226, 217, 0.3);
+        padding: 8px;
+        margin-top: 2px;
+        margin-bottom: 5px;
+      }
+      .planText {
+        margin: 0;
+        // padding: 5px 0px 0px 0px;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: bolder;
+       color: #649941;
+        font-family: "Lato", sans-serif;
+      }
+      .tranIdleb {
+        margin: 0;
+        font-size: 12px;
+        letter-spacing: 0.4px;
+        color: #7b7b7b;
+      }
+      .priceText{
+        margin: 0;
+        // padding: 10px 0;
+        font-size: 16px;
+        font-weight: bold;
+        color: rgba(237, 125, 0, 0.8);
+        width: 100%;
+        font-family: "Lato", sans-serif;
+    }
+    .tranId {
+        margin: 0px 0px;
+        color: #1c1d1d;
+        font-family: "Lato", sans-serif;
+        letter-spacing: 0.5px;
+        font-size: 16px;
+      }
+      .imgPlan{
+        height: 50px;
+        width: 50px;
+      }
+      
+}

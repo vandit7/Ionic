@@ -1,0 +1,98 @@
+{
+  "name": "jatshadi",
+  "version": "0.0.1",
+  "author": "Ionic Framework",
+  "homepage": "http://ionicframework.com/",
+  "private": true,
+  "scripts": {
+    "start": "ionic-app-scripts serve",
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "lint": "ionic-app-scripts lint"
+  },
+  "dependencies": {
+    "@angular/animations": "5.2.11",
+    "@angular/common": "5.2.11",
+    "@angular/compiler": "5.2.11",
+    "@angular/compiler-cli": "5.2.11",
+    "@angular/core": "5.2.11",
+    "@angular/forms": "5.2.11",
+    "@angular/http": "5.2.11",
+    "@angular/platform-browser": "5.2.11",
+    "@angular/platform-browser-dynamic": "5.2.11",
+    "@ionic-native/camera": "^4.20.0",
+    "@ionic-native/clipboard": "^4.20.0",
+    "@ionic-native/core": "~4.20.0",
+    "@ionic-native/facebook": "^4.20.0",
+    "@ionic-native/file": "^4.20.0",
+    "@ionic-native/google-plus": "^4.20.0",
+    "@ionic-native/in-app-browser": "^4.20.0",
+    "@ionic-native/keyboard": "^4.20.0",
+    "@ionic-native/splash-screen": "~4.20.0",
+    "@ionic-native/status-bar": "~4.20.0",
+    "@ionic/storage": "2.2.0",
+    "@ng-select/ng-select": "^1.4.1",
+    "angular4-social-login": "^1.1.1",
+    "angularx-social-login": "^2.1.1",
+    "cordova-android": "^8.1.0",
+    "cordova-clipboard": "^1.3.0",
+    "cordova-plugin-camera": "^4.1.0",
+    "cordova-plugin-facebook4": "^6.2.0",
+    "cordova-plugin-file": "^6.0.2",
+    "cordova-plugin-googleplus": "^8.2.0",
+    "cordova-plugin-inappbrowser": "^3.1.0",
+    "crypto-js": "^3.1.9-1",
+    "ion-rangeslider": "^2.3.0",
+    "ionic-angular": "3.9.5",
+    "ionicons": "3.0.0",
+    "jquery": "^3.5.1",
+    "ng-socket-io": "^0.2.4",
+    "rxjs": "5.5.11",
+    "slick-carousel": "^1.8.1",
+    "sw-toolbox": "3.6.0",
+    "zone.js": "0.8.29"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "3.2.2",
+    "@ionic/lab": "2.0.16",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.2.0",
+    "cordova-plugin-ionic-webview": "^4.1.2",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "typescript": "~2.6.2"
+  },
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "386715253449-rbad0lcq36mf36dthhvu09kg1lg2lg3p.apps.googleusercontent.com",
+        "PLAY_SERVICES_VERSION": "15.0.1"
+      },
+      "cordova-plugin-camera": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-facebook4": {
+        "APP_ID": "417629348920342",
+        "APP_NAME": "jatshadi",
+        "FACEBOOK_HYBRID_APP_EVENTS": "false",
+        "FACEBOOK_ANDROID_SDK_VERSION": "5.5.2"
+      },
+      "cordova-clipboard": {},
+      "cordova-plugin-file": {},
+      "cordova-plugin-inappbrowser": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}

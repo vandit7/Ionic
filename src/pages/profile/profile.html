@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-navbar>
+    <div class="w100p disFlex">
+      <div class="w50p pl15"> <img src="../../assets/imgs/ic_logo.png" class="h30"></div>
+      <div class="w50p tr skipTxt"> </div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <div>
+    <div>
+        <div class="topDiv"></div>
+      <img src="{{profile1}}" class="w100p imgFit" onError="src = '../../assets/imgs/loading.gif'">
+      <div class="proDiv">
+       
+        <div class="img_div posRel">
+            <img src="{{profile1}}" class="proImg" onError="src = '../../assets/imgs/loading.gif'">
+            <div class="camera_div">
+                <img src="assets/imgs/camera.png" class="camera_img" >
+                <!-- (click)="openModal('1')" -->
+                <input type="file" class="file_chooser"  (change)="showPreviewImage1($event)" accept="image/*"/>
+            </div>
+        </div>
+        <div>
+          <p class="proText">{{fullname}}</p>
+        </div>
+
+        <div class="w100p disFlex  mt20">
+          <div class="w25p posRel">
+              <img src="{{profile3}}" class="proImgList" onError="src = '../../assets/imgs/loading.gif'">
+              <div class="camera_div1">
+                  <img src="assets/imgs/camera.png" class="camera_img1" >
+                  <!-- (click)="openModal('2')" -->
+                  <input type="file" class="file_chooser" (change)="showPreviewImage2($event)" accept="image/*"/>
+              </div> 
+          </div>
+          <div class="w25p posRel">
+              <img src="{{profile5}}" class="proImgList" onError="src = '../../assets/imgs/loading.gif'">
+              <div class="camera_div1">
+                  <img src="assets/imgs/camera.png" class="camera_img1" >
+                  <!-- (click)="openModal('3')" -->
+                  <input type="file" class="file_chooser" (change)="showPreviewImage3($event)" accept="image/*"/>
+              </div>
+          </div>
+          <div class="w25p posRel">
+              <img src="{{profile7}}" class="proImgList" onError="src = '../../assets/imgs/loading.gif'">
+              <div class="camera_div1">
+                  <img src="assets/imgs/camera.png" class="camera_img1" >
+                  <!-- (click)="openModal('4')" -->
+                  <input type="file" class="file_chooser" (change)="showPreviewImage4($event)" accept="image/*"/>
+              </div>
+          </div>
+          <div class="w25p posRel">
+              <img src="{{profile9}}" class="proImgList" onError="src = '../../assets/imgs/loading.gif'">
+              <div class="camera_div1">
+                  <img src="assets/imgs/camera.png" class="camera_img1" >
+                  <!-- (click)="openModal('5')" -->
+                  <input type="file" class="file_chooser" (change)="showPreviewImage5($event)" accept="image/*"/>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+ 
+  <!-- <button ion-button (click)="openCamera()">Open Camera </button>
+  <img src="{{framepath}}" class="camera_img1"> -->
+
+  <div class="w100p disFlex stepBg" (click)="funStep1()">
+      <div class="w50p textDet colorED7">Account</div> 
+      <div class="w50p aDiv"><img src="{{src1}}" class="h15"></div>
+ </div>
+ <div *ngIf="listAccount">
+ <div class="w100p disFlex AccList" *ngFor="let item of userList; let idx = index;"  [ngClass]="item.register_id  ===  myRegister_id ? 'bgF1' :'' " (click)="changeAccount(item.register_id)">
+    <div class="w10p mauto tc"><img src="{{item.profile_image}}" class="AccPor"  onError="src = '../../assets/imgs/loading.gif'"></div>
+    <div class="w80p mt3">
+      <p class="fLato accname1" *ngIf="item.is_primary == 'Secondary Account'">{{item.fullname}}</p>
+      <p class="fLato accname" *ngIf="item.is_primary != 'Secondary Account'">{{item.fullname}}</p>
+      <p class="fLato">{{item.email_id}}</p>
+    </div>   
+ </div>
+ <div class="addBtn">
+    <button ion-button full class="loginBtn fExo" type="submit" [disabled]="disableButton"
+    (click)="addAccount()">Add Account</button>
+ </div>
+</div>
+  <div class="p16">
+    
+    <div class="w100p disFlex listText" (click)="gotoEditprofile()">
+      <div class="w50p">
+        <p class="textP">Edit Profile</p>
+      </div>
+      <div class="w50p tr"><img src="../../assets/imgs/ic_arrow.png" class="arrow"></div>
+    </div>
+    <div class="w100p disFlex listText" (click)="gotoFDetails()">
+      <div class="w50p">
+        <p class="textP">Edit Family Details</p>
+      </div>
+      <div class="w50p tr"><img src="../../assets/imgs/ic_arrow.png" class="arrow"></div>
+    </div>
+    <div class="w100p disFlex listText" (click)="gotoEditPreference()">
+      <div class="w50p">
+        <p class="textP">Edit Preference</p>
+      </div>
+      <div class="w50p tr"><img src="../../assets/imgs/ic_arrow.png" class="arrow"></div>
+    </div>
+    <!-- <div class="w100p disFlex listText" (click)="gotoChangePassword()">
+      <div class="w50p">
+        <p class="textP">Change Password</p>
+      </div>
+      <div class="w50p tr"><img src="../../assets/imgs/ic_arrow.png" class="arrow"></div>
+    </div> -->
+    <div class="w100p disFlex listText"  (click)="plan()">
+      <div class="w50p">
+        <p class="textP">Membership Plan</p>
+      </div>
+      <div class="w50p tr"><img src="../../assets/imgs/ic_arrow.png" class="arrow"></div>
+    </div>
+    <div class="w100p disFlex listText"  (click)="TranHis()">
+      <div class="w50p">
+        <p class="textP">Transaction History</p>
+      </div>
+      <div class="w50p tr"><img src="../../assets/imgs/ic_arrow.png" class="arrow"></div>
+    </div>
+    <div class="w100p disFlex listText" (click)="faqUrl()">
+      <div class="w50p">
+        <p class="textP">FAQ's</p>
+      </div>
+      <div class="w50p tr"><img src="../../assets/imgs/ic_arrow.png" class="arrow"></div>
+    </div>
+    <div class="w100p disFlex listText" (click)="ShowPopupLogout()">
+      <div class="w50p">
+        <p class="textP colorED7">Logout</p>
+      </div>
+      <!-- <div class="w50p tr"><img src="../../assets/imgs/ic_arrow.png" class="arrow"></div> -->
+    </div>
+  
+    <!-- <button ion-button (click)="openModal()">Open Modal</button> -->
+  </div>
+  
+</ion-content>
+<div class="msgText"  *ngIf="exitText"><p class="copyP">Press again to exit</p></div> 

@@ -1,0 +1,39 @@
+page-planpopup {
+    .stepDiv {
+        border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+      .listplanText {
+        font-size: 14px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: #7b7b7b;
+        letter-spacing: 0.5px;
+        margin: 0px;
+        text-align: left;
+      }
+      .w20p{
+        width: 10%;
+      }
+      .dis_list_model {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 15px;
+      }
+
+      .dis_list_model img {
+          max-width: 30px;
+      }
+
+      .dis_list_model p {
+          font-size: 16px;
+      }
+
+      .scroll-content {
+          padding-top: 10px;
+      }
+}

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{planame}}</ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="closeModal()">
+              <ion-icon item-right name="ios-close-outline"></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="dis_list dis_list_model" *ngFor="let item1 of array;">
+    
+      <p class="listplanText">{{item1.Key}}</p>
+    
+    <div *ngIf="item1.Key == 'View Contact'">
+      <img src="../../assets/imgs/ic_accept.png" *ngIf="item1.Value == '1'" class="wh20">
+      <img src="../../assets/imgs/ic_reject_plan.png" *ngIf="item1.Value == '0'" class="wh20">
+    </div>
+    <div *ngIf="item1.Key != 'View Contact'">
+      <img src="../../assets/imgs/ic_accept.png" *ngIf="item1.Value == '1'" class="wh20">
+      <img src="../../assets/imgs/ic_reject_plan.png" *ngIf="item1.Value == '0'" class="wh20">
+    </div>
+  </div>
+</ion-content>

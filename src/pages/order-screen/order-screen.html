@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <div class="w100p disFlex">
+      <div class="w50p pl15"> <img src="../../assets/imgs/ic_logo.png" class="h30"></div>
+      <div class="w50p tr skipTxt"> </div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bgColor">
+ <div class="p5">
+   <div class="tc">
+    <img src="../../assets/imgs/ic_accept.png" class="allImgAcc" onError="src = '../../assets/imgs/defaultImg.png'" *ngIf="status_orderFS == '1' ">
+    <img src="../../assets/imgs/ic_reject_plan.png" class="allImgAcc" onError="src = '../../assets/imgs/defaultImg.png'"  *ngIf="status_orderFS == '2' ">
+    <img src="../../assets/imgs/ic_padding.png" class="allImgAcc" onError="src = '../../assets/imgs/defaultImg.png'"  *ngIf="status_orderFS != '1'  && status_orderFS != '2'">
+   </div>
+    <div  *ngIf="status_orderFS == '1' "><p class="orderText" style="color: green;">{{order_statusFS}}</p></div>
+    <div  *ngIf="status_orderFS == '2' "><p class="orderText" style="color: red;">{{order_statusFS}}</p></div>
+    <div *ngIf="status_orderFS != '1'  && status_orderFS != '2'"><p class="orderText" style="color: coral;">{{order_statusFS}}</p></div>
+    <div><p class="orderTime">{{DateFS}}</p></div>
+    <div class="boxDiv" >
+      <div><p class="tranIdleb">Transaction ID</p></div>
+      <div><p class="tranId">{{transaction_idFS}}</p></div>
+    </div>
+    <div class="boxDiv" >
+      <div><p class="tranIdleb">Paid Via</p></div>
+      <div><p class="tranId">{{bank_nameFS}}</p></div>
+    </div>
+    <div class="boxDiv" >
+      <div><p class="tranIdleb">Plan Details</p></div>
+      <div class="w100p disFlex mt10"> 
+        <div class="w15p tc mauto pt5">
+          <img src="{{imgFS}}" class="imgPlan" onError="src = '../../assets/imgs/defaultImg.png'">
+        </div>
+        <div class="w35p pl15">
+          <div class="w100p disFlex">
+            <div>
+              <p class="planText">{{plan_nameFS}}</p>
+              <p class="monthText">{{periodFS}}</p>
+            
+            </div>
+          </div>
+        </div>
+        <div class="w50p">
+          <div class="w100p disFlex tr">
+                <p class="priceText"><span>₹</span> <span>{{AmountFS}}</span></p>
+            </div>
+        </div>
+      </div>
+    </div>
+ </div>
+</ion-content>
+<ion-footer>
+  <div class="p13">
+    <p class="doneText" (click)="gotoMainPage()">Done</p>
+    </div>
+</ion-footer>

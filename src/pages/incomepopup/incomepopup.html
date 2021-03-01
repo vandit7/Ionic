@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <p class="tXtImg fLato">Please Upgrade Annual Income !</p>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="height: 65%;">
+  <div style="height: 100%;" class="clspopup">
+    <div class="mb10 mt3">
+      <ng-select [items]="infoIncome" bindLabel="income" bindValue="id" placeholder="Choose"
+        [(ngModel)]="selectedIncome" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+        (change)="onChangeIncome($event)" [dropdownPosition]="bottom">
+
+        <ng-template ng-label-tmp let-item="item">
+          <div style="display: flex;">
+            {{item.income}}
+          </div>
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item" let-index="index">
+          <div style="display: flex; padding-top: 2px;">
+            <b>{{item.income}}</b>
+          </div>
+        </ng-template>
+      </ng-select>
+    </div>
+    <div class="dummy"></div>
+    <button ion-button full class="loginBtn fExo" type="submit" [disabled]="disableButton"
+      (click)="appLogin()">Submit</button>
+  </div>
+  
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <div class="w100p disFlex">
+      <div class="w50p pl15"> <img src="../../assets/imgs/ic_logo.png" class="h30"></div>
+      <div class="w50p tr skipTxt" (click)="gobackProfile()"> Back</div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bgPage">
+  <div *ngIf="planLength > 0">
+    <div class="p30"  *ngFor="let item of priceList; let idx = index;">
+      <div class="mainDivPrice posRel" >
+        <div class="mostPopDiv" *ngIf="item.recommded">
+          <p class="m0">{{item.recommded}}</p>
+        </div>
+        <div class="d-flex" (click)="openPlandetails(item.plan,item.name)">
+          <div>
+            <img src="{{item.img}}" class="imgPlan">
+          </div>
+          <div>
+            <p class="planText">{{item.month}}</p>
+            <!-- <p class="monthText">{{item.month}}</p> -->
+            <p class="priceText"><img src="../../assets/imgs/inr.svg" class="wh25"> <span>{{item.price}}</span></p>
+          </div>
+        </div>
+        <div (click)="openPlandetails(item.plan,item.name)">
+          <div>
+            <div class="dis_list">
+                <p class="listplanText">{{item.name}}</p>
+                <img src="../../assets/imgs/inr.svg" class="wh20">
+            </div>
+          </div>
+        </div>
+        <div>
+          <button ion-button full class="loginBtn fExo" type="submit" (click)="ShowPopupUpgrade(item.id)"
+            *ngIf="Buy == '1'">Upgrade</button>
+          <p class="currentPlanTxt" *ngIf="item.Buy == '1' && item.upgrade =='1'">Your Current Plan</p>
+        </div>
+        <div *ngIf="item.Buy == 0 && item.UserBuy == 1">
+          <button ion-button full class="loginBtn fExo" type="submit" (click)="ShowPopupUpgrade(item.id)">Buy
+            Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="planLength == 0">
+    <p class="notFoundText">No Record Found.</p>
+  </div>
+</ion-content>

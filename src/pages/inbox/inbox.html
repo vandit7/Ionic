@@ -1,0 +1,165 @@
+<ion-header>
+  <ion-navbar>
+    <div class="w100p disFlex">
+      <div class="w50p pl15"> <img src="../../assets/imgs/ic_logo.png" class="h30"></div>
+      <div class="w50p tr skipTxt"> </div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bgColor">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="!noInternet">
+    <div class="w100p disFlex tc tabBg">
+      <div class="w50p tab1 activeTab" (click)="tabAlls(1)">
+        <p class="menuText">Received</p>
+      </div>
+      <div class="w50p tab2 disTab" (click)="tabAlls(2)">
+        <p class="menuText">Send</p>
+      </div>
+    </div>
+    <div class="p12">
+      <div *ngIf="receivedTab">
+        <div *ngIf="!receiveNotFound">
+          <div class="boxDiv" [ngClass]="idx == 0 ? '' : 'mt12'" *ngFor="let item of receiveList;let idx = index;">
+            <div class="w100p disFlex" >
+              <div class="w20p pt10">
+                <img src="{{item.Profile}}" class="msgImg ProfileImg" onError="src = '../../assets/imgs/loading.gif'"
+                  (click)="openModal(item.Profile,item.Username)">
+              </div>
+              <div class="w80p">
+                <div class="w100p disFlex" (click)="gotoProfileDetails(item.register_id)">
+                  <div class="w60p">
+                    <p class="nameTxt fLato">{{item.Username}}</p>
+                  </div>
+                  <div class="w40p div1">
+                    <p class="textDiv fLato">{{item.Time}}</p>
+                  </div>
+                </div>
+                <div class="w100p disFlex" >
+                  <div class="w50p">
+                    <p class="nameTxt1 fLato" (click)="gotoProfileDetails(item.register_id)">{{item.Age}} years, {{item.Height}}"</p>
+                  </div>
+                  <div class="w50p div2">
+                    <p class="nameTxt1 fLato tr" (click)="gotoProfileDetails(item.register_id)">{{item.Location}}</p>
+                  </div>
+                </div>
+                <div class="w100p disFlex ">
+                  <div class="w70p">
+                    <p class="nameTxt1 fLato">{{item.Organistion}}</p>
+                  </div>
+                  <div class="w30p">
+                    <div class="w100p disFlex pt5" *ngIf="item.Status == '0'"
+                      (click)="ShowPopupCancelReq(item.ID,'3','sendNot')">
+                      <img src="../../assets/imgs/ic_reject.png" class="h25 mauto">
+                    </div>
+                    <div class="w100p disFlex pt5" *ngIf="item.Status == '1'" (click)="joinChat(item.register_id)">
+                      <img src="../../assets/imgs/ic_comment.png" class="h30 mauto">
+                    </div>
+                    <div class="w100p sendBtn pt5" *ngIf="item.Status == '2'"
+                      (click)="connectNow(item.register_id,'sendNot')">
+                      <p class="m0">Connect Now</p>
+                    </div>
+                    <div class="w100p cancelBtn pt5" *ngIf="item.Status == '3'"
+                      (click)="UpdateStatus(item.ID,'3','sendNot')">
+                      <p class="m0">Cancel</p>
+                    </div>
+                    <div class="w100p disFlex pt5" *ngIf="item.Status == '4'">
+                      <div class="w50p tr pr5">
+                        <img src="../../assets/imgs/ic_accept.png" class="h25"
+                          (click)="UpdateStatus(item.ID,'1','sendNot')">
+                      </div>
+                      <div class="w50p div2">
+                        <img src="../../assets/imgs/ic_reject.png" class="h25"
+                          (click)="UpdateStatus(item.ID,'2','sendNot')">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="receiveNotFound">
+          <p class="notFoundText">No Record Found.</p>
+        </div>
+      </div>
+      <div *ngIf="sendTab">
+        <div *ngIf="!sendNotFound">
+          <div class="boxDiv" [ngClass]="idx == 0 ? '' : 'mt12'" *ngFor="let item of sendList;let idx = index;">
+            <div class="w100p disFlex" (click)="gotoProfileDetails(item.register_id)">
+              <div class="w20p pt10">
+                <img src="{{item.Profile}}" class="msgImg ProfileImg" onError="src = '../../assets/imgs/loading.gif'"
+                  (click)="openModal(item.Profile,item.Username)">
+              </div>
+              <div class="w80p">
+                <div class="w100p disFlex">
+                  <div class="w60p">
+                    <p class="nameTxt fLato">{{item.Username}}</p>
+                  </div>
+                  <div class="w40p div1">
+                    <p class="textDiv fLato">{{item.Time}}</p>
+                  </div>
+                </div>
+                <div class="w100p disFlex">
+                  <div class="w50p">
+                    <p class="nameTxt1 fLato">{{item.Age}} years, {{item.Height}}"</p>
+                  </div>
+                  <div class="w50p div2">
+                    <p class="nameTxt1 fLato tr">{{item.Location}}</p>
+                  </div>
+                </div>
+                <div class="w100p disFlex ">
+                  <div class="w70p">
+                    <p class="nameTxt1 fLato">{{item.Organistion}}</p>
+                  </div>
+                  <div class="w30p">
+                    <div class="w100p disFlex pt5" *ngIf="item.Status == '0'"
+                      (click)="ShowPopupCancelReq(item.ID,'3','send')">
+                      <img src="../../assets/imgs/ic_reject.png" class="h25 mauto">
+                    </div>
+                    <div class="w100p disFlex pt5" *ngIf="item.Status == '1'" (click)="joinChat(item.register_id)">
+                      <img src="../../assets/imgs/ic_comment.png" class="h30 mauto">
+                    </div>
+                    <div class="w100p sendBtn pt5" *ngIf="item.Status == '2'"
+                      (click)="connectNow(item.register_id,'send')">
+                      <p class="m0">Connect Now</p>
+                    </div>
+                    <div class="w100p cancelBtn pt5" *ngIf="item.Status == '3'"
+                      (click)="UpdateStatus(item.ID,'3','send')">
+                      <p class="m0">Cancel</p>
+                    </div>
+                    <div class="w100p disFlex pt5" *ngIf="item.Status == '4'">
+                      <div class="w50p tr pr5">
+                        <img src="../../assets/imgs/ic_accept.png" class="h25"
+                          (click)="UpdateStatus(item.ID,'1','send')">
+                      </div>
+                      <div class="w50p div2">
+                        <img src="../../assets/imgs/ic_reject.png" class="h25"
+                          (click)="UpdateStatus(item.ID,'2','send')">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="sendNotFound">
+          <p class="notFoundText">No Record Found.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="noInternet" style="width: 100%;text-align: center; margin-top: 40%;">
+    <img src="../../assets/imgs/nointernet.png" style="height: 80px;">
+    <p style="margin: 0px; text-align: center;    margin-bottom: 20px;margin-top: 20px;"> No Internet connection !</p>
+    <button ion-button full class="tryBtn fExo" type="submit" (click)="getAllUserDetails()">TRY AGAIN</button>
+  </div>
+
+</ion-content>
+<div class="msgText" *ngIf="exitText">
+  <p class="copyP">Press again to exit</p>
+</div>

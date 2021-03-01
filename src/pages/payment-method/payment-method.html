@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <div class="w100p disFlex">
+      <div class="w50p pl15"> <img src="../../assets/imgs/ic_logo.png" class="h30"></div>
+      <div class="w50p tr skipTxt" (click)="gobackProfile()"> Back</div>
+    </div>
+  </ion-navbar>
+</ion-header>
+<ion-content class="bgColor">
+  <div class="textDet">Select Payment Method</div>
+  <div class="p5">
+    <div>
+      <div class="boxDiv" (click)="paymentSelect('1')">
+        <div class="w100p disFlex"> 
+          <div class="w15p tc mauto pt5">
+            <img src="{{payImg1}}" class="msgImg ProfileImg" onError="src = '../../assets/imgs/defaultImg.png'">
+          </div>
+          <div class="w80p">
+            <div class="w100p disFlex">
+              <img src="assets/imgs/paytm.png" class="w100 " onError="src = '../../assets/imgs/defaultImg.png'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="boxDiv" (click)="paymentSelect('2')">
+        <div class="w100p disFlex"> 
+          <div class="w15p tc mauto pt5">
+            <img src="{{payImg2}}" class="msgImg ProfileImg" onError="src = '../../assets/imgs/defaultImg.png'">
+          </div>
+          <div class="w80p">
+            <div class="w100p disFlex">
+              <img src="assets/imgs/atom.png" class="w100 " onError="src = '../../assets/imgs/defaultImg.png'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+ 
+</ion-content>
+<ion-footer>
+  <div class="p10">
+    <button ion-button full class="loginBtn fExo" type="submit"  [disabled]="disableButton" (click)="SelectPaymentType()">Submit</button>
+    </div>
+</ion-footer>

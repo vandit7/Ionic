@@ -1,0 +1,95 @@
+<ion-content>
+  <div class="h320 posRel tc mDiv">
+    <img src="{{InfoToUserDetail}}" class="AllImgs"
+      onError="src = '../../assets/imgs/defaultImg.png'">
+    <div class="imgLe">
+      <div class="w100p disFlex plr15">
+        <div class="w50p tl">
+          <img src="../../assets/imgs/left-arrow.png" class="h30 w25 " (click)="dismissModal()">
+        </div>
+        <div class="w50p tr" style="opacity: 0;">
+          <div class="menuIcons">
+            <img src="../../assets/imgs/menu.png" class="divImgMenu">
+          </div>
+        </div>
+      </div>
+      <div class="w100p disFlex plr15t10">
+        <div class="w50p tl">
+        </div>
+        <div class="w50p tr" style="opacity: 0;">
+          <div class="cameraIcon fr">
+            <span class="textDiv fLato colorfff fw600" style="font-size: 13px;">3</span>
+            <img src="../../assets/imgs/camera.png" class="divImgCamera">
+          </div>
+        </div>
+      </div>
+      <div class="imgSubDiv" style="position: absolute;bottom: 0; width: 100%;">
+        <div class="w100p disFlex">
+          <div class="w50p">
+            <p class="nameTxt fLato">{{InfoName}}</p>
+          </div>
+          <div class="w50p div1" style="opacity: 0;">
+            <img src="../../assets/imgs/App.png" class="divImgHeart">
+            <span class="textDivPre fLato color649">85 %</span></div>
+        </div>
+        <div class="w100p disFlex pl15">
+          <img src="../../assets/imgs/birthday-cake.png" class="divImgHeart">
+          <p class="nameTxt1 fLato">{{InfoDOB}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p12">
+    <div class="mt10">
+      <p class="f14 fw600 colorED7 ls05 fLato">About {{InfoName}}</p>
+    </div>
+    <div>
+      <div class="boxDiv bgColorAll">
+        <p>{{InfoAbout}}</p>
+      </div>
+      <!-- <div class="mt15"> 
+        <p class="f14 fw600 colorED7 ls05 fLato">Contact Details</p>
+      </div>
+      <div class="boxDiv bgColorAll">
+        <div class="w100p disFlex">
+          <div class="w10p">
+            <img src="../../assets/imgs/ic_call.png" class="divImg">
+          </div>
+          <div class="w90p"> <span class="boxTxt fLato">{{InfoMobileNo}}</span></div>
+        </div>
+      </div>
+      <div class="boxDiv bgColorAll">
+        <div class="w100p disFlex ">
+          <div class="w10p">
+            <img src="../../assets/imgs/ic_mail.png" class="divImg">
+          </div>
+          <div class="w90p"> <span class="boxTxt fLato">{{InfoEmailID}}</span></div>
+        </div>
+      </div> -->
+
+      <div class="mt15">
+        <p class="f14 fw600 colorED7 ls05 fLato">Location</p>
+      </div>
+      <div class="boxDiv bgColorAll">
+        <div class="w100p disFlex">
+          <div class="w10p">
+            <img src="../../assets/imgs/ic_map.png" class="divImg">
+          </div>
+          <div class="w90p"> <span class="boxTxt fLato"> {{InfoCity}}, {{InfoState}}, {{InfoCountry}}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p16">
+    <div class="blockText w100p disFlex" *ngIf="InfoIsBlock == '0'" (click)="presentConfirmBlock()">
+      <img src="../../assets/imgs/blockIcon.png" class="divImgHeart">
+      <p style="padding-top: 1px;padding-left: 10px;">Block</p>
+    </div>
+    <div class="blockText w100p disFlex" *ngIf="InfoIsBlock == '1'" (click)="presentConfirmUnBlock()">
+      <img src="../../assets/imgs/unblock.png" class="divImgHeart">
+      <p style="padding-top: 1px;padding-left: 10px; color: #333131;">Unblock</p>
+    </div>
+  </div>
+  <div class="msgBlockTet" *ngIf="blockText"><p class="copyP">{{blockMsg}}</p></div> 
+</ion-content>

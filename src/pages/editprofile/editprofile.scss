@@ -1,0 +1,64 @@
+page-editprofile {
+    .loginBtn {  
+        background: #649941;
+         margin-top: 10px; 
+        color: #fff;
+        height: 45px;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        font-family: 'Lato', sans-serif;
+    }
+   .frgtPwd1 {
+       letter-spacing: 0.5px;
+       font-size: 15px;
+       color: #7B7B7B;
+       font-weight: 500;
+    }
+    .item-cover {
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 0 !important;
+        height: 0 !important;
+        background: transparent;
+        cursor: pointer;
+    }
+    ion-label {
+        font-size: 14px;
+        font-family: 'Lato', sans-serif;
+    }
+    .textDet{
+        height: 40px;
+        width: 100%;
+        text-align: left;
+        line-height: 40px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #3c3939;
+        letter-spacing: 0.4px;
+        padding-left: 15px;
+        margin-top: 5px;
+    }
+    .stepBg{
+        background-color: rgba(100, 153, 65, 0.1);
+    }
+    .p16{
+        padding: 16px;
+        padding-top: 0px;
+    }
+    .aDiv{
+        text-align: right;
+        padding-right: 20px;
+        margin: auto;
+    }
+    .fullText b{
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+
+    
+}

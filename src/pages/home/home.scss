@@ -1,0 +1,405 @@
+page-home {
+  .textCom {
+    font-size: 20px;
+    text-align: center;
+  }
+  ion-slides {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .slide-zoom {
+    height: 100%;
+  }
+  .SliderDiv {
+    width: 90px;
+
+    // margin-left: 10px;
+    // margin-right: 5px;
+    padding-left: 15px;
+    padding-right: 0px;
+    margin-top: 3px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+  }
+
+  .Sbg {
+    background: linear-gradient(rgb(241, 245, 249) 40%, rgb(255, 255, 255)) rgb(241, 245, 249);
+    border-radius: 5px;
+    padding-top: 10px;
+  }
+  .sliderImg {
+    height: 60px;
+    border-radius: 100%;
+    width: 60px;
+    object-fit: cover;
+  }
+  .Ptext {
+    margin: 0;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-weight: 500;
+  }
+  // ion-slides {
+  //   overflow-y: scroll;
+  // }
+  // .swiper-slide {
+  //   overflow-y: scroll;
+  // }
+  .p16 {
+    padding: 16px;
+  }
+  .AllImgs {
+    height: 100%;
+    object-fit: cover;
+    text-align: center;
+    width: 100%;
+    border-radius: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .imgLe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-image: linear-gradient(transparent 5%, #000);
+    border-radius: 0px;
+  }
+
+  .mDiv {
+    box-shadow: 0px 1px 2px 2px rgba(241, 245, 249, 0.9);
+    margin-bottom: 15px;
+  }
+  p {
+    margin: 0px;
+  }
+
+  .nameTxt {
+    margin: 0;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 15px;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    text-align: left;
+  }
+  .div1 {
+    color: #fff;
+    padding-top: 10px;
+    padding-left: 15px;
+    text-align: right;
+    padding-right: 15px;
+  }
+  .divImgMenu {
+    height: 15px;
+    vertical-align: middle;
+  }
+  .divImg {
+    height: 35px;
+    vertical-align: middle;
+    margin-bottom: 3px;
+  }
+  .divImgHeart {
+    height: 20px;
+    vertical-align: text-bottom;
+  }
+  .divImgCamera {
+    height: 20px;
+    vertical-align: middle;
+    font-size: 13px;
+    padding-left: 4px;
+    vertical-align: text-top;
+    height: 16px;
+    padding-right: 4px;
+  }
+  .textDiv {
+    font-size: 12px;
+    // padding-left: 5px;
+    letter-spacing: 0.5px;
+    padding-right: 5px;
+  }
+  .textDivPre {
+    letter-spacing: 0.5px;
+    font-weight: bolder;
+    font-size: 13px;
+    padding-left: 0px;
+  }
+  .nameTxt1 {
+    margin: 0;
+    color: #fff;
+    line-height: 20px;
+    padding-left: 15px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding-right: 15px;
+    text-align: left;
+    padding-bottom: 8px;
+  }
+  .bob {
+    margin-left: 15px;
+    margin-right: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .fw300 {
+    font-weight: 300;
+  }
+  .imgSubDiv {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .imgSubDiv1 {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    color: white !important;
+    z-index: 9;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  .ion-header {
+    height: 9% !important;
+  }
+  .fixed-content {
+    height: 74% !important;
+  }
+  // @media only screen and (min-height: 700px) {
+  //   .imgSubDiv {
+  //     bottom: 55px !important;
+  //   }
+  // }
+
+  // @media only screen and (max-height: 596px) {
+  //   .imgSubDiv {
+  //     bottom: 12px !important;
+  //   }
+  // }
+
+  .LinkDiv {
+    padding-left: 15px;
+    padding-right: 15px;
+    // height: 88px;
+    line-height: 35px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    height: 25%;
+  }
+  .LinkDiv1 {
+    /* padding-left: 15px; */
+    /* padding-right: 15px; */
+    /* line-height: 35px; */
+    /* margin-bottom: 5px; */
+    /* margin-top: 5px; */
+    /* height: 25%; */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    /* position: absolute; */
+    /* bottom: 0; */
+    justify-content: space-around;
+    padding: 10px;
+  }
+  .LinkDiv2{
+        position: absolute;
+    right: 10px;
+    bottom: 150px;
+  }
+  .LinkDiv3{
+    height: 14%;
+  }
+  .plr15 {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+  }
+  .cameraIcon {
+    background: rgba(0, 0, 0, 0.7);
+    width: max-content;
+    padding: 4px;
+    border-radius: 4px;
+  }
+  .menuIcons {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3px;
+    height: 25px;
+    border-radius: 3px;
+    width: 20px;
+    float: right;
+  }
+  .sendBtn {
+    text-align: center;
+    background: #649941;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Lato", sans-serif;
+  }
+  .cancelBtn {
+    text-align: center;
+    background: #ed7d00;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Lato", sans-serif;
+  }
+  .tryBtn {
+    background: #649941;
+    color: #fff;
+    height: 40px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    width: 65%;
+    margin: auto;
+  }
+  .tr{
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .msgText {
+    position: absolute;
+    bottom: 2%;
+    z-index: 999;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+    left: 0;
+    right: 0;
+    padding: 80px;
+    font-size: 14px;
+  }
+  .copyP {
+    background: rgba(0, 0, 0, 0.6);
+    line-height: 30px;
+    border-radius: 15px;
+    margin: 0;
+  }
+
+  .toolbar-md {
+    padding: 0px;
+    min-height: 56px;
+  }
+  .scrollTOP {
+    min-height: 27px;
+    height: auto;
+
+    .scroll-content {
+      padding: 0px !important;
+    }
+  }
+  .cardTOP {
+    display: inline-block;
+    padding-left: 20px;
+  }
+  .activePtags {
+    height: 30px;
+    line-height: 30px;
+    background: rgba(151, 195, 84, 0.8);
+    border-radius: 50px;
+  }
+  .trrr{
+    margin-bottom: 20px;
+    text-align: right;
+  }
+  .norecordimge{
+    text-align: center;
+    font-size: 24px;
+    color: #649941;
+    margin-top: 53px;
+    margin-left: 103px !important;
+  }
+  .tbsList {
+    height: 51px;
+    line-height: 50px;
+    background: #649941;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+  .header-md::after,
+  .tabs-md[tabsPlacement="top"] > .tabbar::after,
+  .footer-md::before,
+  .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    display: none;
+  }
+
+  @keyframes fivePhasesFadeIn {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .fivePhasesFadeIn {
+    animation-name: fivePhasesFadeIn;
+    animation-duration: 0.4s;
+  }
+  .one_slide {
+    height: 100%;
+    position: relative;
+  }
+
+  .one_slide .user_profile {
+    height: 100%;
+    object-fit: cover;
+  }
+  .one_slide_content {
+    position: absolute;
+    bottom: 56px;
+    left: 0;
+    text-align: left;
+    padding: 15px;
+    color: #fff;
+  }
+
+  .one_slide_flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .one_slide_flex div {
+    width: 100%;
+    text-align: center;
+  }
+
+  .one_slide_content .bob {
+    margin-top: 10px;
+  }
+  .LinkDiv1{
+    height: 25%;
+    text-align: right;
+  }
+  .nocls{
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 51%;
+    margin-left: 31px;
+  }
+}

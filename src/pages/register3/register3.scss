@@ -1,0 +1,62 @@
+page-register3 {
+    .loginBtn {  
+        background: #649941;
+         margin-top: 10px; 
+        color: #fff;
+        height: 45px;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        font-family: 'Lato', sans-serif;
+        margin-bottom: 10px; 
+    }
+   .frgtPwd1 {
+       letter-spacing: 0.5px;
+       font-size: 15px;
+       color: #7B7B7B;
+       font-weight: 500;
+    }
+    .item-cover {
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 0 !important;
+        height: 0 !important;
+        background: transparent;
+        cursor: pointer;
+    }
+    ion-label {
+        font-size: 14px;
+        font-family: 'Lato', sans-serif;
+    }
+    .gotra {
+        background: #fff;
+        border: 1px solid #eee;
+        -webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+        border-top-color: #e6e6e6;
+        max-height: 240px;
+        overflow: hidden;
+        overflow-y: auto;
+        position: absolute;
+        display: block;
+        z-index: 1;
+        width: 100%;
+}
+.gotra .radio {
+    display: none;
+}
+.f_gotra {
+    position: relative;
+}
+.searchbar-input{
+    border: 1px solid #b6bbbf !important;
+    background-color: #ffffff !important;
+    font-size:12px !important;
+}
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {
+    background-color: #649941 !important;
+}
+}

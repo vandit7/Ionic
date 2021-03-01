@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar>
+    <div class="w100p disFlex" style="padding: 12px 11px 11px 4px;">
+      <div class="w50p pl15" style="padding-top: 0px;"> <img src="../../assets/imgs/ic_logo.png" class="h30"></div>
+      
+        <div class="w50p tr skipTxt" (click)="goback()"> Back</div>
+      
+    </div>
+  
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="!noInternet">
+    <div *ngIf="!userNotFound"> 
+    <ion-slides slidesPerView="1" direction="vertical" class="hDevice">
+      <ion-slide class="" *ngFor="let item of userList; let idx = index;">
+        <div class=" posRel tc hDevice">
+          <img src="{{item.profile_img}}" class="AllImgs">
+          <div class="imgLe">
+
+            <div class="imgSubDiv" style="position: absolute;bottom: 0; width: 100%;">
+              <div class="w100p disFlex">
+                <div class="w70p">
+                  <p class="nameTxt fLato">{{item.fullname}}</p>
+                </div>
+                <!-- <div class="w30p div1">
+                <img src="../../assets/imgs/App.png" class="divImgHeart">
+                <span class="textDivPre fLato color649">85 %</span></div> -->
+              </div>
+              <div class="w100p disFlex">
+                <p class="nameTxt1 fLato">{{item.age}} years, {{item.height}}" - {{item.education_field}},
+                  {{item.city}},
+                  {{item.state}}, {{item.country_name}}</p>
+              </div>
+              <div class="bob"></div>
+              <div class="w100p disFlex LinkDiv ">
+                <div class="w33p tc" *ngIf="!test(item.register_id)" (click)="linkPro(item.register_id)">
+                  <img src="../../assets/img/like.svg" class="divImg fivePhasesFadeIn">
+                  <p class="textDiv fLato colorfff fw300">Like</p>
+                </div>
+                <div class="w33p tc" *ngIf="test(item.register_id)" (click)="unLinkPro(item.register_id)">
+                  <img src="../../assets/img/like_done.svg" class="divImg fivePhasesFadeIn">
+                  <p class="textDiv fLato colorfff fw300">Unlike</p>
+                </div>
+                <div class="w33p tc" (click)="gotoProfileDetails(item.register_id)">
+                  <img src="../../assets/img/view.svg" class="divImg">
+                  <p class="textDiv fLato colorfff fw300">View</p>
+                </div>
+                <div class="w33p tc" *ngIf="item.RequestStatus == '2'" (click)="connectNow(item.register_id)">
+                  <img src="../../assets/img/connect.svg" class="divImg">
+                  <p class="textDiv fLato colorfff fw300">Connect</p>
+                </div>
+                <div class="w33p tc" *ngIf="item.RequestStatus == '0'" (click)="UpdateStatus(item.RequestID,'3')">
+                  <img src="../../assets/img/close.svg" class="divImg">
+                  <p class="textDiv fLato color649 fw300">Reject</p>
+                </div>
+                <div class="w33p tc" *ngIf="item.RequestStatus == '1'" (click)="joinChat(item.register_id)">
+                  <img src="../../assets/img/chat.svg" class="divImg">
+                  <p class="textDiv fLato color649 fw300">Chat Now</p>
+                </div>
+                <div class="w33p tc" *ngIf="item.RequestStatus == '3'" (click)="ShowPopupCancelReq(item.RequestID,'3')">
+                  <img src="../../assets/img/close.svg" class="divImg">
+                  <p class="textDiv fLato colorED7 fw300">Cancel</p>
+                </div>
+                <div class="w33p tc" *ngIf="item.RequestStatus == '4'" (click)="UpdateStatus(item.RequestID,'1')">
+                  <img src="../../assets/img/connect_active.svg" class="divImg">
+                  <p class="textDiv fLato colorfff fw300">Accept</p>
+                </div>
+                <div class="w33p tc" *ngIf="item.RequestStatus == '4'" (click)="UpdateStatus(item.RequestID,'2')">
+                  <img src="../../assets/img/close.svg" class="divImg">
+                  <p class="textDiv fLato colorED7 fw300">Reject</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</div>
+  <p style=" text-align: center;font-size: 24px;color: #649941;margin-top: 35px;" *ngIf="userNotFound">No Record Found</p>
+  <div *ngIf="noInternet" style="width: 100%;text-align: center; margin-top: 40%;">
+    <img src="../../assets/imgs/nointernet.png" style="height: 80px;">
+    <p style="margin: 0px; text-align: center;    margin-bottom: 20px;margin-top: 20px;"> No Internet connection !</p>
+    <button ion-button full class="tryBtn fExo" type="submit" (click)="allUserList(0)">TRY AGAIN</button>
+  </div>
+
+</ion-content>

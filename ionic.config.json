@@ -1,0 +1,7 @@
+{
+  "name": "jatshadi",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,169 @@
+<ion-header>
+  <ion-navbar>
+    <div class="w100p disFlex">
+
+      <div class="w50p pl15"> <img src="../../assets/imgs/ic_logo.png" class="h30"></div>
+      <div class="w50p tr skipTxt" (click)="gobackProfile()"> Back</div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="textDet">Tell us some details your family</div>
+  <div class="allPage">
+    <div>
+      <ion-list>
+        <label class="f12 fLato ls04 allfont">Family Type<span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="familyType" bindLabel="name" bindValue="name" placeholder="Choose Family Type"
+            [(ngModel)]="selectedFamilyType" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeFyType($event)" [dropdownPosition]="bottom">
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;padding-top: 2px;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <label class="f12 fLato ls04 allfont">Family Status <span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="familyStates" bindLabel="name" bindValue="name" placeholder="Choose Family Status"
+            [(ngModel)]="selectedFamilyStates" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeFyStates($event)" [dropdownPosition]="bottom">
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;padding-top: 2px;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <label class="f12 fLato ls04 allfont">Father's Status<span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="fatherStates" bindLabel="name" bindValue="name" placeholder="Choose Father's Status"
+            [(ngModel)]="selectedFatherStates" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeFaStates($event)" [dropdownPosition]="bottom">
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;padding-top: 2px;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <label class="f12 fLato ls04 allfont">Mother's Status<span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="motherStates" bindLabel="name" bindValue="name" placeholder="Choose Mother's Status"
+            [(ngModel)]="selectedMotherStates" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeMoStates($event)" [dropdownPosition]="bottom">
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;padding-top: 2px;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+
+        <div class="disFlex w100p">
+          <div class="w50p mr5">
+            <label class="f12 fLato ls04 allfont">No of Brothers <span class="colorRed">*</span></label>
+            <div class="mb10 mt3">
+              <ng-select [items]="noBrothers" bindLabel="name" bindValue="name" placeholder="Choose"
+                [(ngModel)]="selectedNoBrothers" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+                (change)="onChangeNoBro($event)" [dropdownPosition]="bottom">
+                <ng-template ng-label-tmp let-item="item">
+                  <div style="display: flex;padding-top: 2px;">
+                    {{item.name}}
+                  </div>
+                </ng-template>
+                <ng-template ng-option-tmp let-item="item" let-index="index">
+                  <div style="display: flex;">
+                    <b>{{item.name}}</b>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+          </div>
+          <div class="w50p ml5">
+            <label class="f12 fLato ls04 allfont">How Many Married <span class="colorRed">*</span></label>
+            <div class="mb10 mt3">
+                <ng-select [items]="broMarried" bindLabel="name" bindValue="name" placeholder="Choose"
+                  [(ngModel)]="selectedBroMarried" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+                  (change)="onChangeBroMarried($event)" [dropdownPosition]="bottom">
+                  <ng-template ng-label-tmp let-item="item">
+                    <div style="display: flex;padding-top: 2px;">
+                      {{item.name}}
+                    </div>
+                  </ng-template>
+                  <ng-template ng-option-tmp let-item="item" let-index="index">
+                    <div style="display: flex;">
+                      <b>{{item.name}}</b>
+                    </div>
+                  </ng-template>
+                </ng-select>
+              </div>
+          </div>
+        </div>
+        <div class="disFlex w100p">
+          <div class="w50p mr5">
+            <label class="f12 fLato ls04 allfont">No of Sisters <span class="colorRed">*</span></label>
+            <div class="mb10 mt3">
+                <ng-select [items]="noSisters" bindLabel="name" bindValue="name" placeholder="Choose"
+                  [(ngModel)]="selectedNoSisters" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+                  (change)="onChangeNoSis($event)" [dropdownPosition]="bottom">
+                  <ng-template ng-label-tmp let-item="item">
+                    <div style="display: flex;padding-top: 2px;">
+                      {{item.name}}
+                    </div>
+                  </ng-template>
+                  <ng-template ng-option-tmp let-item="item" let-index="index">
+                    <div style="display: flex;">
+                      <b>{{item.name}}</b>
+                    </div>
+                  </ng-template>
+                </ng-select>
+              </div>
+          </div>
+          <div class="w50p ml5">
+            <label class="f12 fLato ls04 allfont">How Many Married <span class="colorRed">*</span></label>
+            <div class="mb10 mt3">
+                <ng-select [items]="sisMarried" bindLabel="name" bindValue="name" placeholder="Choose"
+                  [(ngModel)]="selectedSisMarried" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+                  (change)="onChangeSisMarried($event)" [dropdownPosition]="bottom">
+                  <ng-template ng-label-tmp let-item="item">
+                    <div style="display: flex;padding-top: 2px;">
+                      {{item.name}}
+                    </div>
+                  </ng-template>
+                  <ng-template ng-option-tmp let-item="item" let-index="index">
+                    <div style="display: flex;">
+                      <b>{{item.name}}</b>
+                    </div>
+                  </ng-template>
+                </ng-select>
+              </div>
+          </div>
+        </div>
+      </ion-list>
+      <button ion-button full class="loginBtn fExo" type="submit" [disabled]="disableButton" (click)="updateFamilyDetails()">Save</button>
+    </div>
+  </div>
+</ion-content>

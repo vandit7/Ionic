@@ -1,0 +1,124 @@
+<ion-header style="background: #eaeff3;">
+  <div class="w100p disFlex borTop" *ngIf="!searchDiv">
+    <div class="w10p tc ptl5" (click)="gobackConversation()">
+      <img src="../../assets/imgs/left-arrow.png" class="h30 w25 ">
+    </div>
+    <div class="w15p tc pl5" >
+      <img src="{{ToUserDetail}}" class="Proimg" onError="src = '../../assets/imgs/loading.gif'" >
+    </div>
+    <div style="margin: 5px auto; display: block; width: 45%;" class="pl10" (click)="openViewContect()">
+      <p class="textname fLato">{{Name}}</p>
+      <p class="textname1 fLato">{{online_status}}</p>
+    </div>
+    <div class="w10p tc pt10" style="opacity: 0;">
+      <img src="../../assets/imgs/delete.png" class="h20 w20" (click)="presentConfirmDelete()" *ngIf="selectIocn">
+    </div>
+    <div class="w10p tc pt10">
+      <img src="../../assets/imgs/information.png" class="h20 w20" (click)="openModal()"
+        *ngIf="selectIocn && showOnlyOne">
+    </div>
+    
+    <div class="w10p tc pt10">
+      <img src="../../assets/imgs/copy.png" class="h20 w20" (click)="msgCopy()" *ngIf="selectIocn">
+    </div>
+    <div class="w10p tl pt10" *ngIf="!selectIocn" (click)="presentPopover($event)">
+      <img src="../../assets/imgs/more.png" class="h20 w20">
+    </div>
+  </div>
+  <div class="w100p disFlex" *ngIf="searchDiv">
+    <div class="w10p tc pt10 pl10" (click)="backtoMain()">
+      <img src="../../assets/imgs/left-arrow.png" class="h30 w25">
+    </div>
+    <div class="w80p">
+      <ion-searchbar [(ngModel)]="searchTerm" #SearchToFocus (search)="setFilteredItems()"></ion-searchbar>
+    </div>
+    <div class="w10p tc pt13 pr10" (click)="setFilteredItems()">
+      <img src="../../assets/imgs/search.png" class="h25 w25">
+    </div>
+  </div>
+<div style="position: relative;">
+<div style="position: absolute;width: 100%;text-align: center;top: 0px;" *ngIf="showLoadMore">
+ <p class="loadmorep" (click)="firstTimeFun()"> Load More..</p>
+</div>
+</div>
+</ion-header>
+
+<ion-content (ionScroll)="scrolling($event)" class="bgPageChat" style="background-color: transparent !important;">
+  <!-- <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>.reverse() -->
+  <ion-grid id="msgContainer">
+
+    <ion-row *ngFor="let message of messagesOther; let idx = index;" class="removeClass" [ngClass]="{active: message.selected}"> 
+      <!-- {{i}} -->
+      <!-- <div class="tc w100p">
+        <div *ngIf="isDifferentDay(i)">
+          <ion-badge color="primary" text-center>{{ getMessageDate(i) }}
+          </ion-badge>
+        </div>
+      </div> -->
+      <ion-col col-9 class="message" *ngIf="message.position_text == 'left'" (click)="multicheck(message)"
+        on-hold="onHold()">
+
+        <div class="chat-message left" *ngIf="message.is_deleted == '0'">
+          <div class="message-detail">
+            {{message.message}}
+          </div>
+          <div class="time">{{message.Date}} </div>
+        </div>
+        <div class="chat-message left" *ngIf="message.is_deleted == '1'">
+          <div class="message-detail disFlex">
+            <span class="f10 foit"> {{message.message}}</span> <span class="f10 pl15 time">{{message.Date}}</span>
+          </div>
+        </div> 
+      </ion-col>
+
+      <ion-col offset-3 col-9 class="message" *ngIf="message.position_text == 'right'" (click)="multicheck(message)" on-hold="onHold()">
+        <div class="chat-message right" *ngIf="message.is_deleted == '0'">
+          <div class="message-detail">
+            {{message.message}}
+          </div>
+          <div class="time"><span>{{message.Date}}</span>
+            <span *ngIf="message.ChatStatus == '0'"><img src="../../assets/imgs/0.png" class="IconChat"></span>
+            <span *ngIf="message.ChatStatus == '1'"><img src="../../assets/imgs/1.png" class="IconChat"></span>
+            <span *ngIf="message.ChatStatus == '2'"><img src="../../assets/imgs/2.png" class="IconChat"></span>
+          </div>
+        </div>
+        <div class="chat-message right"  style="padding: 6px 10px;" *ngIf="message.is_deleted == '1'">
+          <div class="message-detail disFlex">
+            <span class="f10 foit"> {{message.message}}</span> <span class="f10 pl15 time">{{message.Date}}</span>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
+<div class="bottomArrows" (click)="onChange()" *ngIf="arrowshow">
+  <img src="../../assets/imgs/downarrow.png" class="bottomArrowImg">
+</div>
+<div class="msgCopyTet" *ngIf="copyText"><p class="copyP">Message Copied</p></div>  
+<div class="msgblockTet" *ngIf="blockText"><p class="copyP">{{blockMsg}}</p></div>  
+<ion-footer *ngIf="!searchDiv">
+  <ion-toolbar>
+    <ion-row class="message_row">
+      <ion-col col-10>
+        <ion-item no-lines class="textMsg">
+          <ion-input type="text" placeholder="Say something..." [(ngModel)]="message" (focus)="onChange()" (keyup)="onChange1()" #inputToFocus></ion-input>
+            <!-- <ion-textarea rows="1" id="messageInputBox" placeholder="Say something..." (input)="change()" [(ngModel)]="message" #inputToFocus required></ion-textarea> -->
+        </ion-item>
+      </ion-col>
+      <ion-col col-2 *ngIf="IsBlock == '0'">
+        <button ion-button clear color="primary" [disabled]="message === ''">
+          <ion-icon ios="ios-send" md="md-send" class="colorED7 f25" (click)="sendMessage()"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-2 *ngIf="IsBlock == '1'">
+        <button ion-button clear color="primary" [disabled]="message === ''">
+          <ion-icon ios="ios-send" md="md-send" class="colorED7 f25" (click)="presentConfirmUnBlock()"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

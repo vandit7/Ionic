@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-navbar>
+    <div class="w100p disFlex">
+      <div class="w50p pl15"> <img src="../../assets/imgs/ic_logo.png" class="h30"></div>
+      <div class="w50p tr skipTxt" (click)="gobackProfile()"> Back</div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bgColor">
+  <div class="p5">
+    <div class="tc">
+     <img src="../../assets/imgs/ic_accept.png" class="allImgAcc" onError="src = '../../assets/imgs/defaultImg.png'" *ngIf="status == '1' ">
+     <img src="../../assets/imgs/ic_reject_plan.png" class="allImgAcc" onError="src = '../../assets/imgs/defaultImg.png'"  *ngIf="status == '2' ">
+     <img src="../../assets/imgs/ic_padding.png" class="allImgAcc" onError="src = '../../assets/imgs/defaultImg.png'"  *ngIf="status != '1'  && status != '2'">
+    </div>
+    <div  *ngIf="status == '1'"><p class="orderText" style="color: green;">{{StatusText}}</p></div>
+    <div  *ngIf="status == '2'"><p class="orderText" style="color: red;">{{StatusText}}</p></div>
+    <div *ngIf="status != '1'  && status != '2'"><p class="orderText" style="color: coral;">{{StatusText}}</p></div>
+     <div><p class="orderTime">{{Date}}</p></div>
+     <div class="boxDiv" >
+       <div><p class="tranIdleb">Transaction ID</p></div>
+       <div><p class="tranId">{{TransactionID}}</p></div>
+     </div>
+     <div class="boxDiv" >
+      <div class="w100p disFlex"> 
+        <div class="w50p">
+          <div><p class="tranIdleb">Paid Via</p></div>
+          <div><p class="tranId">{{BankName}}</p></div>
+        </div>
+        <div class="w50p tr">
+          <div><p class="tranIdleb">Payment Mode</p></div>
+          <div><p class="tranId">{{PaymentType}} </p></div>
+          </div>
+        </div>  
+     </div>
+     <div class="boxDiv" style="margin-bottom: 10px;">
+       <div><p class="tranIdleb">Plan Details</p></div>
+       <div class="w100p disFlex mt10"> 
+         <div class="w15p tc mauto pt5">
+           <img src="{{img}}" class="imgPlan" onError="src = '../../assets/imgs/defaultImg.png'">
+         </div>
+         <div class="w35p pl15">
+           <div class="w100p disFlex">
+             <div>
+               <p class="planText">{{PlanName}}</p>
+               <p class="monthText">{{Period}}</p>
+             
+             </div>
+           </div>
+         </div>
+         <div class="w50p">
+           <div class="w100p disFlex tr">
+                 <p class="priceText"><span>₹</span> <span>{{Amount}}</span></p>
+             </div>
+         </div>
+       </div>
+       <div class="w100p mt10">
+        <div class="w100p disFlex stepDiv"  >
+          <div class="w80p pl10">
+            <p class="listplanText">View Contact</p>
+          </div>
+          <div class="w20p">
+              <p class="viewplanText">{{ViewContact}}</p>
+          </div>
+        </div> 
+        <div class="w100p disFlex stepDiv"  >
+          <div class="w80p pl10">
+            <p class="listplanText">Support 24*7</p>
+          </div>
+          <div class="w20p pt5 tc">
+              <img src="../../assets/imgs/ic_accept.png"  class="wh20"  *ngIf="CallSupport == '1' "> 
+              <img src="../../assets/imgs/ic_reject_plan.png"  class="wh20"  *ngIf="CallSupport == '0' ">  
+          </div>
+        </div> 
+        <div class="w100p disFlex stepDiv"  >
+          <div class="w80p pl10">
+            <p class="listplanText">Priority Search</p>
+          </div>
+          <div class="w20p pt5 tc">
+            <img src="../../assets/imgs/ic_accept.png"  class="wh20"  *ngIf="PrioritySearch == '1' "> 
+            <img src="../../assets/imgs/ic_reject_plan.png"  class="wh20"  *ngIf="PrioritySearch == '0' "> 
+          </div>
+        </div> 
+        <div class="w100p disFlex stepDiv"  >
+          <div class="w80p pl10">
+            <p class="listplanText">Instant SMS Notification</p>
+          </div>
+          <div class="w20p pt5 tc">
+            <img src="../../assets/imgs/ic_accept.png"  class="wh20"  *ngIf="SmsNotification == '1' "> 
+              <img src="../../assets/imgs/ic_reject_plan.png"  class="wh20"  *ngIf="SmsNotification == '0' "> 
+          </div>
+        </div>  
+      </div>
+     </div>
+  </div>
+</ion-content>

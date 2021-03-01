@@ -1,0 +1,10 @@
+<!-- Generated template for the ChatsettingComponent component -->
+<div>
+  <ion-list>
+    <button ion-item (click)="close('1')">View Contact</button>
+    <!-- <button ion-item (click)="close('4')">Search</button> -->
+    <button ion-item (click)="close('2')" *ngIf="IsBlock == '0'">Block</button>
+    <button ion-item (click)="close('2')" *ngIf="IsBlock == '1'">Unblock</button> 
+    <button ion-item (click)="close('3')" *ngIf="ClearChat == '1'">Clear chat</button>
+  </ion-list>
+</div>

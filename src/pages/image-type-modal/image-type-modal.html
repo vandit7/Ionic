@@ -1,0 +1,16 @@
+<ion-content>
+  <p class="protext">Profile Photo</p>
+  <div class="w100p disFlex selDiv">
+     <div class="w50p tc">
+       <img src="../../assets/imgs/CameraImg.png" class="h50" (click)="ImageType('camera')">
+     </div>
+     <div class="w50p tc" style="position: relative;">
+        <img src="../../assets/imgs/gallery.png" class="h50" >
+        <input type="file" class="file_chooser" (change)="showPreviewImage($event)" accept="image/*" style="position: absolute;width: 100%;left: 0;opacity: 0;height: 50px;"/>
+     </div>
+  </div>
+  <div>
+      <p class="cantext" (click)="dismissModal()">Cancel</p>
+  </div>
+  <!-- <button ion-button (click)="dismissModal()">Close Modal</button> -->
+</ion-content>

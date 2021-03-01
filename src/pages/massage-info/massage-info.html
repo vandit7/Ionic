@@ -1,0 +1,50 @@
+<ion-header style="background: #eaeff3;height: 56px; line-height: 56px;">
+  <div class="w100p disFlex">
+    <div class="w10p tc pt10 pl10" (click)="dismissModal()">
+      <img src="../../assets/imgs/left-arrow.png" class="h30 w25 ">
+    </div>
+   
+    <div class="ml15">
+      <p class="textname fLato">Message Info</p>
+    </div>
+   
+  </div>
+
+</ion-header>
+
+<ion-content class="bgColor">
+  <ion-grid id="msgContainer">
+    <ion-row  >
+       <ion-col offset-3 col-9 class="message" >   
+        <div class="chat-message right" >
+          <div class="message-detail">
+          {{messageA}}
+          </div>
+          <div class="time"><span>{{DateA}}</span>
+            <span *ngIf="ChatStatusA == '0'"><img src="../../assets/imgs/0.png" class="IconChat"></span>
+            <span *ngIf="ChatStatusA == '1'"><img src="../../assets/imgs/1.png" class="IconChat"></span>
+            <span *ngIf="ChatStatusA == '2'"><img src="../../assets/imgs/2.png" class="IconChat"></span>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="p10">
+    <div class="bgfff p16" style="border-radius: 5px;">
+      <div>
+    <div class="w100p disFlex ">
+      <div><img src="../../assets/imgs/2.png" class="IconChat"></div>
+      <div class="pl10">Read</div>
+    </div>
+    <div class="pl10 timeDiv">{{IsReadA}}</div>
+    </div>
+    <div>
+        <div class="w100p disFlex pt10">
+          <div><img src="../../assets/imgs/1.png" class="IconChat"></div>
+          <div class="pl10">Delivered</div>
+        </div>
+        <div class="pl10 timeDiv1">{{IsDeliveryA}}</div>
+        </div>
+  </div>
+  </div>
+</ion-content>

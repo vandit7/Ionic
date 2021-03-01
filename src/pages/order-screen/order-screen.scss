@@ -1,0 +1,96 @@
+page-order-screen {
+    .p13{
+        padding: 13px;
+    }
+  .bgColor {
+    background-color: rgba(232, 226, 217, 0.5);
+  }
+  .allImgAcc {
+    height: 85px;
+    padding-top: 20px;
+  }
+  .imgPlan{
+    height: 50px;
+    width: 50px;
+  }
+  .orderText {
+    margin: 0;
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 0.4px;
+    padding-top: 5px;
+    color: #ed7d00;
+    font-family: "Lato", sans-serif;
+  }
+  .orderTime {
+    margin: 0;
+    padding: 2px 0px 15px 0px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    font-family: "Lato", sans-serif;
+    color: #939494;
+  }
+  .boxDiv {
+    height: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 1px rgba(232, 226, 217, 0.3);
+    padding: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  .tranIdleb {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    color: #7b7b7b;
+  }
+  .tranId {
+    margin: 3px 0px;
+    color: #000;
+    font-family: "Lato", sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+  }
+  .planName {
+    margin: 0px;
+    font-size: 20px;
+    color: #ed7d00;
+    font-family: "Lato", sans-serif;
+  }
+  .planText {
+    margin: 0;
+    padding: 8px 10px 1px 0px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bolder;
+   color: #649941;
+    font-family: "Lato", sans-serif;
+  }
+  .monthText {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 900;
+    color: rgba(68, 68, 68, 0.5);
+    letter-spacing: 0.5px;
+    font-family: "Lato", sans-serif;
+  }
+  .priceText{
+    margin: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(237, 125, 0, 0.8);
+    width: 100%;
+    font-family: "Lato", sans-serif;
+}
+.doneText{
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(237, 125, 0, 0.8);
+    font-family: "Lato", sans-serif;
+}
+}

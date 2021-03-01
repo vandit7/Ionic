@@ -1,0 +1,641 @@
+<ion-header>
+  <ion-navbar>
+    <div class="w100p disFlex">
+      <div class="w50p pl15"> <img src="../../assets/imgs/ic_logo.png" class="h30"></div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="w100p disFlex stepBg mb10" (click)="funStep1()">
+    <div class="w50p textDet colorED7">STEP-1</div>
+    <div class="w50p aDiv"><img src="{{src1}}" class="h10"></div>
+  </div>
+  <div class="p16" *ngIf="step1">
+    <div>
+      <div class="mt15">
+        <p class="f14 fw500 colorED7 ">SIGNUP DETAILS</p>
+      </div>
+      <ion-list>
+        <label class="f12 fLato ls04 allfont">Account Name <span class="colorRed">*</span></label>
+        <ion-item class="mb10 mt3">
+          <ion-input type="text" placeholder="Enter Account Name" [(ngModel)]="accountName"></ion-input>
+        </ion-item>
+        <label class="f12 fLato ls04 allfont">Profile For <span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="profileFor" bindLabel="name" bindValue="name" placeholder="Choose"
+            [(ngModel)]="selectedProfileFor" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChange($event)" [dropdownPosition]="bottom">
+
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;padding-top: 2px;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+
+        <div class="disFlex w100p">
+          <div class="w30p mr5">
+            <label class="f12 fLato allfont">Your Mobile No. <span class="colorRed">*</span></label>
+            <ion-item class="mb10 mt3">
+              <ion-input type="text" placeholder="+91" class="fLato" [(ngModel)]="mocode" disabled="true"></ion-input>
+            </ion-item>
+          </div>
+          <div class="w70p ml5">
+            <label class="f12 fLato" style="opacity: 0">Mobile No <span class="colorRed">*</span></label>
+            <ion-item class="mb10 mt3">
+              <ion-input type="tel" placeholder="Mobile No" class="fLato" [(ngModel)]="mobile" maxlength="10">
+              </ion-input>
+            </ion-item>
+          </div>
+        </div>
+        <label class="f12 fLato ls04 allfont">Username <span class="colorRed">*</span></label>
+        <ion-item class="mb10 mt3">
+          <ion-input type="text" placeholder="Enter Username" [(ngModel)]="userName"></ion-input>
+        </ion-item>
+
+        <label class="f12 fLato ls04 allfont">Email <span class="colorRed">*</span></label>
+        <ion-item class="mb10 mt3">
+          <ion-input type="text" placeholder="Enter Email Address" [(ngModel)]="emailAddress" disabled="true">
+          </ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div>
+      <div class="mt15">
+        <p class="f14 fw500 colorED7 ">PROFILE DETAILS</p>
+      </div>
+      <ion-list>
+        <div class="disFlex w100p">
+          <div class="w50p mr5">
+            <label class="f12 fLato ls04 allfont">First Name<span class="colorRed">*</span></label>
+            <ion-item class="mb10 mt3">
+              <ion-input type="text" value="" placeholder="Enter First Name" class="fLato" [(ngModel)]="fullname"
+                (keypress)="keyPress($event)" clearOnEdit="false"></ion-input>
+            </ion-item>
+          </div>
+          <div class="w50p ml5">
+            <label class="f12 fLato ls04 allfont">Last Name <span class="colorRed">*</span></label>
+            <ion-item class="mb10 mt3">
+              <ion-input type="text" value="" placeholder="Enter Last Name" class="fLato" [(ngModel)]="lastname"
+                (keypress)="keyPress($event)" clearOnEdit="false"></ion-input>
+            </ion-item>
+          </div>
+        </div>
+        <div class="disFlex w100p">
+          <div class="w50p mr5">
+            <label class="f12 fLato ls04 allfont">Gender <span class="colorRed">*</span></label>
+            <div class="mb10 mt3">
+              <ng-select [items]="gender" bindLabel="name" bindValue="name" placeholder="Choose"
+                [(ngModel)]="selectedGender" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+                (change)="onChangeGender($event)" [dropdownPosition]="bottom">
+
+                <ng-template ng-label-tmp let-item="item">
+                  <div style="display: flex;">
+                    {{item.name}}
+                  </div>
+                </ng-template>
+                <ng-template ng-option-tmp let-item="item" let-index="index">
+                  <div style="display: flex; padding-top: 2px;">
+                    <b>{{item.name}}</b>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+
+          </div>
+          <div class="w50p ml5">
+            <label class="f12 fLato ls04 allfont">Date Of Birth <span class="colorRed">*</span></label>
+            <ion-item class="mb10 mt3">
+              <!-- <ion-label>Date Of Birth</ion-label> -->
+              <ion-datetime displayFormat="DD-MM-YYYY" placeholder="Date Of Birth" [max]="endMax" [(ngModel)]="dob" class="w100p">
+              </ion-datetime>
+            </ion-item>
+          </div>
+        </div>
+      </ion-list>
+    </div>
+  </div>
+  <div class="w100p disFlex stepBg mb10" (click)="funStep2()">
+    <div class="w50p textDet colorED7">STEP-2</div>
+    <div class="w50p aDiv"><img src="{{src2}}" class="h10"></div>
+  </div>
+  <div class="p16" *ngIf="step2">
+    <div>
+      <div class="mt15">
+        <p class="f14 fw500 colorED7 ">LOCATION DETAILS</p>
+      </div>
+      <ion-list>
+        <label class="f12 fLato ls04 allfont">Country Live In <span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="countryList" bindLabel="name" bindValue="name" placeholder="Choose Country"
+            [(ngModel)]="selectedCountryList" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeCountryList($event)" [dropdownPosition]="bottom">
+
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex; padding-top: 2px;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+
+        <label class="f12 fLato ls04 allfont">State Live In <span class="colorRed">*</span></label>
+
+        <div class="mb10 mt3">
+          <ng-select [items]="stateList" bindLabel="name" bindValue="name" placeholder="Choose State"
+            [(ngModel)]="selectedStateList" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeStateList($event)" [dropdownPosition]="bottom">
+
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex; padding-top: 2px;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <label class="f12 fLato ls04 allfont">City Live In <span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="cityList" bindLabel="name" bindValue="name" placeholder="Choose City"
+            [(ngModel)]="selectedCityList" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeCityList($event)" [dropdownPosition]="bottom">
+
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex; padding-top: 2px;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+      </ion-list>
+    </div>
+    <div>
+      <div class="mt15">
+        <p class="f14 fw500 colorED7 ">ADDITIONAL DETAILS</p>
+      </div>
+      <ion-list>
+        <label class="f12 fLato ls04 allfont">Marital Status <span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="marital" bindLabel="name" bindValue="name" placeholder="Choose Marital Status"
+            [(ngModel)]="selectedMarital" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeMarital($event)" [dropdownPosition]="bottom">
+
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex; padding-top: 2px;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <label class="f12 fLato ls04 allfont">Physical Status <span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="physical" bindLabel="name" bindValue="name" placeholder="Choose Physical Status"
+            [(ngModel)]="selectedPhysical" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangePhysical($event)" [dropdownPosition]="bottom">
+
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex; padding-top: 2px;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <div *ngIf="showBox">
+          <label class="f12 fLato ls04 allfont">Physical Box <span class="colorRed">*</span></label>
+          <ion-item class="mb10 mt3">
+            <ion-input type="text" placeholder="Enter Physical Box" [(ngModel)]="physicalBox"
+              (change)="onChangePBox($event)" clearOnEdit="false"></ion-input>
+          </ion-item>
+        </div>
+        <div class="disFlex w100p">
+          <div class="w50p mr5">
+            <label class="f12 fLato ls04 allfont">Height <span class="colorRed">*</span></label>
+            <div class="mb10 mt3">
+              <ng-select [items]="height" bindLabel="name" bindValue="name" placeholder="Choose"
+                [(ngModel)]="selectedHeight" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+                (change)="onChangeHeight($event)" [dropdownPosition]="bottom">
+
+                <ng-template ng-label-tmp let-item="item">
+                  <div style="display: flex;">
+                    {{item.name}}
+                  </div>
+                </ng-template>
+                <ng-template ng-option-tmp let-item="item" let-index="index">
+                  <div style="display: flex; padding-top: 2px;">
+                    <b>{{item.name}}</b>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+          </div>
+          <div class="w50p ml5">
+            <label class="f12 fLato ls04 allfont">Weight <span class="colorRed">*</span></label>
+            <ion-item class="mb10 mt3">
+              <ion-input type="number" placeholder="Enter Weight" [(ngModel)]="weight" (change)="onChangeWeight($event)"
+                clearOnEdit="false"></ion-input>
+            </ion-item>
+          </div>
+        </div>
+
+        <div class="disFlex w100p">
+          <div class="w50p mr5">
+            <label class="f12 fLato ls04 allfont">Skin Color <span class="colorRed">*</span></label>
+            <div class="mb10 mt3">
+              <ng-select [items]="skin" bindLabel="name" bindValue="name" placeholder="Choose"
+                [(ngModel)]="selectedSkin" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+                (change)="onChangeSkin($event)" [dropdownPosition]="bottom">
+
+                <ng-template ng-label-tmp let-item="item">
+                  <div style="display: flex;">
+                    {{item.name}}
+                  </div>
+                </ng-template>
+                <ng-template ng-option-tmp let-item="item" let-index="index">
+                  <div style="display: flex; padding-top: 2px;" class="fullText">
+                    <b>{{item.name}}</b>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+          </div>
+          <div class="w50p ml5">
+            <label class="f12 fLato ls04 allfont">Blood Type <span class="colorRed">*</span></label>
+            <div class="mb10 mt3">
+              <ng-select [items]="body" bindLabel="name" bindValue="name" placeholder="Choose"
+                [(ngModel)]="selectedBody" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+                (change)="onChangeBody($event)" [dropdownPosition]="bottom">
+
+                <ng-template ng-label-tmp let-item="item">
+                  <div style="display: flex;">
+                    {{item.name}}
+                  </div>
+                </ng-template>
+                <ng-template ng-option-tmp let-item="item" let-index="index">
+                  <div style="display: flex; padding-top: 2px;">
+                    <b>{{item.name}}</b>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+          </div>
+        </div>
+
+        <div class="disFlex w100p">
+          <div class="w50p mr5">
+            <label class="f12 fLato ls04 allfont">Do You Smoke <span class="colorRed">*</span></label>
+            <div class="mb10 mt3">
+              <ng-select [items]="smoke" bindLabel="name" bindValue="name" placeholder="Choose"
+                [(ngModel)]="selectedSmoke" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+                (change)="onChangeSmoke($event)" [dropdownPosition]="bottom">
+
+                <ng-template ng-label-tmp let-item="item">
+                  <div style="display: flex;">
+                    {{item.name}}
+                  </div>
+                </ng-template>
+                <ng-template ng-option-tmp let-item="item" let-index="index">
+                  <div style="display: flex; padding-top: 2px;">
+                    <b>{{item.name}}</b>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+          </div>
+          <div class="w50p ml5">
+            <label class="f12 fLato ls04 allfont">Do You Drink <span class="colorRed">*</span></label>
+            <div class="mb10 mt3">
+              <ng-select [items]="drink" bindLabel="name" bindValue="name" placeholder="Choose"
+                [(ngModel)]="selectedDrink" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+                (change)="onChangeDrink($event)" [dropdownPosition]="bottom">
+
+                <ng-template ng-label-tmp let-item="item">
+                  <div style="display: flex;">
+                    {{item.name}}
+                  </div>
+                </ng-template>
+                <ng-template ng-option-tmp let-item="item" let-index="index">
+                  <div style="display: flex; padding-top: 2px;">
+                    <b>{{item.name}}</b>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+          </div>
+        </div>
+
+      </ion-list>
+
+    </div>
+  </div>
+  <div class="w100p disFlex stepBg" (click)="funStep3()">
+    <div class="w50p textDet colorED7">STEP-3</div>
+    <div class="w50p aDiv"><img src="{{src3}}" class="h10"></div>
+  </div>
+  <div class="p16" *ngIf="step3">
+    <div>
+      <div class="mt15">
+        <p class="f14 fw500 colorED7 ">OTHER DETAILS</p>
+      </div>
+      <ion-list>
+        <div class="disFlex w100p">
+          <div class="w50p mr5">
+            <label class="f12 fLato ls04 allfont">Khap <span class="colorRed">*</span></label>
+            <div class="mb10 mt3">
+              <ng-select [items]="khap" bindLabel="name" bindValue="name" placeholder="Choose Khap"
+                [(ngModel)]="selectedKhap" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+                (change)="onChangeKhap($event)" [dropdownPosition]="bottom">
+
+                <ng-template ng-label-tmp let-item="item">
+                  <div style="display: flex;">
+                    {{item.name}}
+                  </div>
+                </ng-template>
+                <ng-template ng-option-tmp let-item="item" let-index="index">
+                  <div style="display: flex; padding-top: 2px;">
+                    <b>{{item.name}}</b>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+          </div>
+          <div class="w50p ml5">
+            <label class="f12 fLato ls04 allfont">Gotra <span class="colorRed">*</span></label>
+            <div class="mb10 mt3">
+              <ng-select [items]="gotra" bindLabel="name" bindValue="name" placeholder="Enter Gotra"
+                [(ngModel)]="selectedGotra" [searchable]="true" [clearSearchOnAdd]="true" [clearable]="true"
+                (change)="onChangeGotra($event)" [dropdownPosition]="bottom">
+
+                <ng-template ng-label-tmp let-item="item">
+                  <div style="display: flex;">
+                    {{item.name}}
+                  </div>
+                </ng-template>
+                <ng-template ng-option-tmp let-item="item" let-index="index">
+                  <div style="display: flex; padding-top: 2px;">
+                    <b>{{item.name}}</b>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+          </div>
+        </div>
+        <div class="disFlex w100p">
+          <div class="w50p mr5">
+            <div *ngIf="khapBox">
+              <label class="f12 fLato ls04 allfont">Other Details <span class="colorRed">*</span></label>
+              <ion-item class="mb10 mt3">
+                <ion-input type="text" placeholder="Enter Khap Other Details " [(ngModel)]="KhapBoxDetail"
+                  (change)="onChangeKhapBox($event)" clearOnEdit="false"></ion-input>
+              </ion-item>
+            </div>
+          </div>
+          <div class="w50p ml5">
+            <div *ngIf="gotraBox">
+              <label class="f12 fLato ls04 allfont">Other Details <span class="colorRed">*</span></label>
+              <ion-item class="mb10 mt3">
+                <ion-input type="text" placeholder="Enter Gotra Other Details" [(ngModel)]="GotraBoxDetail"
+                  (change)="onChangeGotraBox($event)" clearOnEdit="false"></ion-input>
+              </ion-item>
+            </div>
+          </div>
+        </div>
+
+        <label class="f12 fLato ls04 allfont">Mother Gotra <span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="mGotra" bindLabel="name" bindValue="name" placeholder="Enter Mother Gotra"
+            [(ngModel)]="selectedMGotra" [searchable]="true" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeMGotra($event)" [dropdownPosition]="bottom">
+
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex; padding-top: 2px;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <div *ngIf="motherGotraBox">
+          <label class="f12 fLato ls04 allfont">Other Details <span class="colorRed">*</span></label>
+          <ion-item class="mb10 mt3">
+            <ion-input type="text" placeholder="Enter Mother Gotra Other Details" [(ngModel)]="MotherGotraBoxDetails"
+              (change)="onChangeMotherGotraBox($event)" clearOnEdit="false"></ion-input>
+          </ion-item>
+        </div>
+
+        <label class="f12 fLato ls04 allfont">Grand Mother Gotra<span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="gMGotra" bindLabel="name" bindValue="name" placeholder="Enter Grand Mother Gotra"
+            [(ngModel)]="selectedGMGotra" [searchable]="true" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeGMGotra($event)" [dropdownPosition]="bottom">
+
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex; padding-top: 2px;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <div *ngIf="gMotherGotraBox">
+          <label class="f12 fLato ls04 allfont">Other Details <span class="colorRed">*</span></label>
+          <ion-item class="mb10 mt3">
+            <ion-input type="text" placeholder="Enter Grand Mother Gotra Other Details"
+              [(ngModel)]="gMotherGotraBoxDetails" (change)="onChangegMotherGotraBox($event)" clearOnEdit="false">
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <label class="f12 fLato ls04 allfont">Religion<span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="religion" bindLabel="name" bindValue="name" placeholder="Choose Religion"
+            [(ngModel)]="selectedReligion" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeReligion($event)" [dropdownPosition]="bottom">
+
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex; padding-top: 2px;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <div *ngIf="religionBox">
+          <label class="f12 fLato ls04 allfont">Other Details <span class="colorRed">*</span></label>
+          <ion-item class="mb10 mt3">
+            <ion-input type="text" placeholder="Enter Religion Other Details" [(ngModel)]="religionBoxDetails"
+              (change)="onChangeReligionBox($event)" clearOnEdit="false"></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="mt15">
+          <p class="f14 fw500 colorED7 ">EDUCATION DETAILS</p>
+        </div>
+        <label class="f12 fLato ls04 allfont">Education Level <span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="educationLevel" bindLabel="name" bindValue="name" placeholder="Choose Education Level"
+            [(ngModel)]="selectedEducationLevel" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeEducationLevel($event)" [dropdownPosition]="bottom">
+
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex; padding-top: 2px;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <div *ngIf="educationLevelBox">
+          <label class="f12 fLato ls04 allfont">Other Details <span class="colorRed">*</span></label>
+          <ion-item class="mb10 mt3">
+            <ion-input type="text" placeholder="Enter Education Level Other Details"
+              [(ngModel)]="educationLevelBoxDetails" (change)="onChangeEducationLevelBox($event)" clearOnEdit="false">
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <label class="f12 fLato ls04 allfont">Education Field <span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="educationField" bindLabel="name" bindValue="name" placeholder="Choose Education Field"
+            [(ngModel)]="selectedEdeducationField" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeEdeducationField($event)" [dropdownPosition]="bottom">
+
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex; padding-top: 2px;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <div *ngIf="educationFieldBox">
+          <label class="f12 fLato ls04 allfont">Other Details <span class="colorRed">*</span></label>
+          <ion-item class="mb10 mt3">
+            <ion-input type="text" placeholder="Enter Education Field Other Details"
+              [(ngModel)]="educationFieldBoxDetails" (change)="onChangeEducationFieldBox($event)" clearOnEdit="false">
+            </ion-input>
+          </ion-item>
+        </div>
+
+      </ion-list>
+    </div>
+    <div>
+      <div class="mt15">
+        <p class="f14 fw500 colorED7 ">PROFESSIONAL DETAILS</p>
+      </div>
+      <ion-list>
+        <label class="f12 fLato ls04 allfont">You Work With <span class="colorRed">*</span></label>
+        <ion-item class="mb10 mt3">
+          <ion-input type="text" value="" placeholder="Enter Working Organization" class="fLato" [(ngModel)]="workwith"
+            (change)="onChangeWorkWith($event)" clearOnEdit="false">
+          </ion-input>
+        </ion-item>
+
+        <label class="f12 fLato ls04 allfont">Designation <span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="designation" bindLabel="name" bindValue="name" placeholder="Choose Designation"
+            [(ngModel)]="selectedDesignation" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeDesignation($event)" [dropdownPosition]="bottom">
+
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;">
+                {{item.name}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex; padding-top: 2px;">
+                <b>{{item.name}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <div *ngIf="designationBox">
+          <label class="f12 fLato ls04 allfont">Other Details <span class="colorRed">*</span></label>
+          <ion-item class="mb10 mt3">
+            <ion-input type="text" placeholder="Enter Designation Other Details" [(ngModel)]="designationBoxDetails"
+              (change)="onChangeDesignationBox($event)" clearOnEdit="false"></ion-input>
+          </ion-item>
+        </div>
+        <label class="f12 fLato ls04 allfont">Annual Income <span class="colorRed">*</span></label>
+        <div class="mb10 mt3">
+          <ng-select [items]="income" bindLabel="income" bindValue="income" placeholder="Choose Annual Income"
+            [(ngModel)]="selectedIncome" [searchable]="false" [clearSearchOnAdd]="true" [clearable]="true"
+            (change)="onChangeIncome($event)" [dropdownPosition]="bottom">
+
+            <ng-template ng-label-tmp let-item="item">
+              <div style="display: flex;">
+                {{item.income}}
+              </div>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <div style="display: flex; padding-top: 2px;">
+                <b>{{item.income}}</b>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <label class="f12 fLato ls04 allfont"><span>About Myself</span> <span class="colorRed"> *</span><span
+            class="color649 fr">Max 50 Character</span></label>
+        <ion-item class="mb10 mt3" style="height: 80px">
+          <ion-textarea rows="5" value="" placeholder="Write something about you" class="fLato" [(ngModel)]="myself"
+            maxlength="50" (change)="onChangeMyself($event)"></ion-textarea>
+        </ion-item>
+
+      </ion-list>
+    </div>
+  </div>
+  <div class="p16">
+    <button ion-button full class="loginBtn fExo" type="submit" [disabled]="disableButton"
+      (click)="addProfile()">Update</button>
+  </div>
+</ion-content>

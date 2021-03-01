@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <div class="w100p disFlex">
+
+      <div class="w50p pl15"> <img src="../../assets/imgs/ic_logo.png" class="h30"></div>
+      <!-- <div class="w50p tr skipTxt" (click)="skipOtp()"> Skip</div> -->
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="mt10p tc">
+    <img src="../../assets/imgs/ic_otp.png" class="h160">
+  </div>
+  <div>
+    <p class="otpText1">Mobile Verification has Successfully</p>
+  </div>
+  <div>
+      <p class="tc color7B7B ls04 mlr25">
+         We have send the OTP on <span> {{otpMobile}} </span> will apply to the fields
+      </p>
+  </div>
+  <div class="mlr15">
+        <ion-list>
+        <ion-item class="mb15">
+            <ion-input type="number" value="" placeholder="Enter OTP" [(ngModel)]="otp" clearOnEdit="false"></ion-input>
+        </ion-item>
+        </ion-list> 
+  </div>
+
+  <div class="mlr15">
+  <button ion-button full class="loginBtn fExo" type="submit"  [disabled]="disableButton" (click)="appLogin()">Submit</button>
+  <p class="frgtPwd1 fExo tc">You don't receive code | <b class="register_b colorED7" (tap)="otpReSend()">Resend</b></p>
+  </div>
+  
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-content class="bgIntroPage" scroll="false">
+  <div style="position: relative;height: 100%;">
+    <div class="divLogo" style="height: 15%;">
+      <img src="../../assets/imgs/ic_logo1.png" class="topLogo">
+    </div>
+
+    <div style="height: 65%;"> 
+      <ion-slides pager="true">
+        <ion-slide>
+          <div class="">
+            <div class="mlr30">
+              <span class="topText">Get a wide range of profiles according to your <span class="color649 fw600">preference</span></span>
+            </div>
+            
+            <div class="sliderImg mauto">
+              <img src="../../assets/imgs/p1.png" class="" />
+            </div>
+          
+          </div>
+        </ion-slide>
+  
+        <ion-slide> 
+          <div> 
+            <div class="mlr30">
+              <span class="topText">Browse millions of <span class="colorED7 fw600">profiles</span> on-the-go </span>
+            </div>
+           
+            <div class="sliderImg mauto">
+              <img src="../../assets/imgs/p2.png" class="groudImge" />
+            </div>
+           
+          </div>
+        </ion-slide>
+  
+        <ion-slide>
+          <div class="">
+            <div class="mlr30_New">
+              <span class="topText">Send a massage or interest to start <span class="colorED7 fw600">communication</span> with  <span class="color649 fw600"> members.</span></span>
+            </div>
+           
+            <div class="sliderImg mauto">
+              <img src="../../assets/imgs/p3.png" class="" />
+            </div>
+           
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div> 
+    <div class="plr16" style="height: 20%;"> 
+      <p class="lastLab">New to JatShadi.com?</p>
+    <button ion-button full class="loginBtn fExo" type="submit"  [disabled]="disableButton"  (click)="gotoRegister()">Sign up Free</button>
+  </div>
+  </div>
+ 
+</ion-content>
